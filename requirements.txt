@@ -4,6 +4,8 @@
 postgres
 virtualenv
 Flask
-
+flask-sqlalchemy
+flask-migrate
+psycopg2
 
 ### required dependencies with version
