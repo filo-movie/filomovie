@@ -1,0 +1,8 @@
+### required dependencies without versions
+
+# for testing heroku
+postgres
+virtualenv
+
+
+### required dependencies with version
