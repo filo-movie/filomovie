@@ -3,6 +3,7 @@
 # for testing heroku
 postgres
 virtualenv
+Flask
 
 
 ### required dependencies with version
