@@ -7,11 +7,11 @@ git clone https://github.com/filo-movie/filomovie.git
 ```
 
 
-# 2. Create a virtual env:
+# 2. Create a virtual env: (Or use pycharm to create a virtual enviornment and install the requirements.txt file)
 
 (I used Git Bash for the following operations)
 
-## 2.1. In Git Bash, type:
+## 2.1. In Git Bash, type: 
 ```
 cd flask_memcache
 python -m venv venv
