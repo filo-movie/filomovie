@@ -23,11 +23,22 @@ source venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
-# 3. Deployment methods
+# 3. Test locally
+```
+flask run
+heroku local
+heroku local web
+```
 
-## 3.1. Push to Git
+
+# 4. Deployment methods
+
+## 4.1. Push to Git
 ```
 git add .
 git commit -m "message"
-git push origin 
+git push origin development
 ``` 
+
+## 4.2. Push to heroku
+
