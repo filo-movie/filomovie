@@ -13,6 +13,8 @@ git clone https://github.com/filo-movie/filomovie.git
 
 ## 2.1. In Git Bash, type: 
 ```
+mkdir flask_memchache
+export FLASK_APP=filomovie
 cd flask_memcache
 python -m venv venv
 ```
