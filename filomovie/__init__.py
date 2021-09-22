@@ -1,7 +1,7 @@
-# import os
+import os
 from flask import Flask
-# from flask_sqlalchemy import SQLAlchemy
-# from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 '''
 NOTE: database setup boilerplate code. modify to your needs 
@@ -10,12 +10,12 @@ NOTE: database setup boilerplate code. modify to your needs
 # create db object
 # db = SQLAlchemy()
 # migrate = Migrate()
-app = Flask(__name__)
-
 
 # initialize app and database connection
-def initApp():
+def create_app():
+    app = Flask(__name__)
 
+    # TODO: setup database connection here?
     # app.config.from_mapping(
     #     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev_key',
     #     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
@@ -25,7 +25,8 @@ def initApp():
 
     # db.init_app(app)
     # migrate.init_app(app, db)
-
     return app
+
+app = create_app()
 
 
