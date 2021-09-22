@@ -22,7 +22,7 @@ heroku git:remote -a filomovie
 mkdir flask_memchache
 export FLASK_APP=filomovie 	
 cd flask_memcache
-python -m venv venv
+python -m venv venv #only run once if you haven't set up virtual env yet
 ```
 
 ## 2.2. Go into virtual env and install required dependencies (Flask, Postgres, etc) locally. In Git Bash, type:
@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 # 3. Test locally
 ```
-flask run
+python run.app
 heroku local
 heroku local web
 ```
@@ -48,5 +48,5 @@ git commit -m "message"
 git push origin development
 ``` 
 
-## 4.2. Push to heroku
+## 4.2. Or push to heroku
 
