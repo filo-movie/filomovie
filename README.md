@@ -25,7 +25,8 @@ python -m venv venv #only run once if you haven't set up virtual env yet
 
 ## 2.2. Go into virtual env and install required dependencies (Flask, Postgres, etc) locally. In Git Bash, type:
 ```
-source venv/Scripts/activate
+source venv/Scripts/activate (if project is on a windows machine)
+source venv/bin/activate (if on linux machine)
 pip install -r requirements.txt
 ```
 
