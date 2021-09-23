@@ -19,9 +19,7 @@ heroku git:remote -a filomovie
 
 ## 2.1. In Git Bash, type: 
 ```
-mkdir flask_memchache
 export FLASK_APP=filomovie 	
-cd flask_memcache
 python -m venv venv #only run once if you haven't set up virtual env yet
 ```
 
