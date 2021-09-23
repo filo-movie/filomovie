@@ -27,12 +27,11 @@ Mako==1.1.5
 MarkupSafe==2.0.1
 platformdirs==2.3.0
 postgres==3.0.0
-psycopg2==2.9.1
-psycopg2-binary==2.9.1
-psycopg2-pool==1.1
 six==1.16.0
 SQLAlchemy==1.4.23
 typing-extensions==3.10.0.2
 virtualenv==20.8.0
 Werkzeug==2.0.1
 zipp==3.5.0
+
+psycopg2-binary
