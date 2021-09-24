@@ -20,14 +20,14 @@ COPY . .
 # Install dependencies
 RUN apt-get update && apt-get install -y python3 python3-pip libpq-dev gcc
 RUN pip3 install -r requirements.txt
+RUN export LC_ALL=C.UTF-8 && export LANG=C.UTF-8
+RUN export FLASK_APP=filomovie
 
-
-#Expose the required port
+# Expose the required port
 EXPOSE 5000
 
 
 #Run the command
 # CMD gunicorn main:app
-CMD python3 ../run.py
-
-
+#CMD flask run
+CMD python3 app.py
