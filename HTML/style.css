@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #2B3846
+}
+
+a {
+    color: #FFFFFF;
+}
+
+search-bar {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
