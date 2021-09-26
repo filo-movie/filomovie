@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="icon" href="images/movie-symbol-of-video-camera_icon-icons.com_72981.png">
         <link rel="stylesheet" href="style.css">
         <title>indextest</title>
         <style>
@@ -32,32 +33,36 @@
         
     <body>
 
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Google</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Click Me</a>
 
         <h1>FiloMovies</h1>
 
-        <div class="search-bar">
-            <input type="text" name="" placeholder="search movie">
-            <a class="search-button" href="#">
-                <p>GO</p>    
-            </a>
-        </div>
+        <!--this action="" will bring the input to the backend when the GO button is clicked-->
+        <form action="indextest.html">
+            <!--id="" will be useful for backend and css-->
+            <!--only inputs with name="" will be submitted-->
+            <input name="movie_title" id="movie_title" type="text" placeholder="search movie">
+            <button type="submit">GO</button>
+        </form>
     
-        <a href="Movie pages/Shrek_1.html">
-            <img class="movieposter" src="images/Shrek_1.jpg" alt="A movie poster of Shrek 1">
-            <p class="movietitle">Shrek</p>
-        </a>
-        
-        
-        <a href="Movie pages/Shrek_2.html">
-            <img class="movieposter" src="images/Shrek_2.jpg" alt="A movie poster of Shrek 2">
-            <p class="movietitle">Shrek 2</p>
-        </a>
+        <div id="movies">
+            <a id="Shrek1" href="Movie pages/Shrek_1.html">
+                <img class="movieposter" src="images/Shrek_1.jpg" alt="A movie poster of Shrek 1">
+                <p class="movietitle">Shrek</p>
+            </a>
+            
+            
+            <a id="Shrek2" href="Movie pages/Shrek_2.html">
+                <img class="movieposter" src="images/Shrek_2.jpg" alt="A movie poster of Shrek 2">
+                <p class="movietitle">Shrek 2</p>
+            </a>
 
-        <a href="Movie pages/Shrek_3.html">
-            <img class="movieposter" src="images/Shrek_3.jpg" alt="A movie poster of Shrek 3">
-            <p class="movietitle">Shrek 3</p>
-        </a>
+            <a id="Shrek3" href="Movie pages/Shrek_3.html">
+                <img class="movieposter" src="images/Shrek_3.jpg" alt="A movie poster of Shrek 3">
+                <p class="movietitle">Shrek 3</p>
+            </a>
+            <span class="stretch"></span>
+        </div>
         
 
     </body>
