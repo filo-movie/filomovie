@@ -15,7 +15,7 @@ NOTE: database setup boilerplate code. modify to your needs
 def create_app():
     app = Flask(__name__)
 
-    # TODO: setup database connection here?
+    # TODO: Create database connection here
     # app.config.from_mapping(
     #     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev_key',
     #     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
