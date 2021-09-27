@@ -9,25 +9,7 @@
         <link rel="stylesheet" href="style.css">
         <title>indextest</title>
         <style>
-            img.movieposter {
-                width: 100px;
-                border-radius: 10px;
-                object-fit: cover;
-            }
-
-            h1 {
-                color: #FFFFFF;
-            }
-            a {
-                color: #FFFFFF;
-            }
-            p {
-                color: #FFFFFF;
-            }
-            p.movietitle {
-                font-weight: bold;
-                color: #FFFFFF;
-            }
+            
         </style>
     </head>
         
@@ -41,24 +23,24 @@
         <form action="indextest.html">
             <!--id="" will be useful for backend and css-->
             <!--only inputs with name="" will be submitted-->
-            <input name="movie_title" id="movie_title" type="text" placeholder="search movie">
+            <input required name="movie_title" id="movie_title" type="text" placeholder="search movie">
             <button type="submit">GO</button>
         </form>
     
         <div id="movies">
             <a id="Shrek1" href="Movie pages/Shrek_1.html">
-                <img class="movieposter" src="images/Shrek_1.jpg" alt="A movie poster of Shrek 1">
+                <img class="movieposter_multiple" src="images/Shrek_1.jpg" alt="A movie poster of Shrek 1">
                 <p class="movietitle">Shrek</p>
             </a>
             
             
             <a id="Shrek2" href="Movie pages/Shrek_2.html">
-                <img class="movieposter" src="images/Shrek_2.jpg" alt="A movie poster of Shrek 2">
+                <img class="movieposter_multiple" src="images/Shrek_2.jpg" alt="A movie poster of Shrek 2">
                 <p class="movietitle">Shrek 2</p>
             </a>
 
             <a id="Shrek3" href="Movie pages/Shrek_3.html">
-                <img class="movieposter" src="images/Shrek_3.jpg" alt="A movie poster of Shrek 3">
+                <img class="movieposter_multiple" src="images/Shrek_3.jpg" alt="A movie poster of Shrek 3">
                 <p class="movietitle">Shrek 3</p>
             </a>
             <span class="stretch"></span>

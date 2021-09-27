@@ -4,7 +4,37 @@ body {
     background: #2B3846
 }
 
+h1 {
+    color: #FFFFFF;
+}
+
+/*the background-color will need to be a variable from the back-end*/
+h1.API {
+    background-color: #43ac06;
+    border-radius: 10px;
+}
+
 a {
+    color: #FFFFFF;
+}
+
+p {
+    color: #FFFFFF;
+}
+
+img.movieposter_multiple {
+    width: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+img.movieposter_specific {
+    width: 200px;
+    border-radius: 10px;
+}
+
+p.movietitle {
+    font-weight: bold;
     color: #FFFFFF;
 }
 
