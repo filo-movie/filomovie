@@ -11,7 +11,7 @@ from filomovie import app
 
 @app.route('/', methods=('GET', 'POST'))
 def index():
-    return "<p>Hello, World!</p>"
+    return render_template('indextest.html')
 
 
 if __name__ == '__main__':
