@@ -29,6 +29,7 @@ def create_app():
     # migrate.init_app(app, db)
     return app
 
+
 app = create_app()
 
 
