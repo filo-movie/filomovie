@@ -13,7 +13,9 @@ NOTE: database setup boilerplate code. modify to your needs
 
 # initialize app and database connection
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__,
+                static_folder= 'static',
+                template_folder='static/templates')
 
     # TODO: setup database connection here?
     # app.config.from_mapping(
@@ -26,6 +28,7 @@ def create_app():
     # db.init_app(app)
     # migrate.init_app(app, db)
     return app
+
 
 app = create_app()
 
