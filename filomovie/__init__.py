@@ -13,9 +13,11 @@ NOTE: database setup boilerplate code. modify to your needs
 
 # initialize app and database connection
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__,
+                static_folder= 'static',
+                template_folder='static/templates')
 
-    # TODO: Create database connection here
+    # TODO: setup database connection here?
     # app.config.from_mapping(
     #     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev_key',
     #     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
@@ -27,6 +29,6 @@ def create_app():
     # migrate.init_app(app, db)
     return app
 
-app = create_app()
 
+app = create_app()
 
