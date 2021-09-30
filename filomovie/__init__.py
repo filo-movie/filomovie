@@ -15,8 +15,8 @@ def create_app():
                 template_folder='static/templates')
 
     app.config.from_mapping(
-        SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev_key',
-        SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL'),
+        SECRET_KEY = os.environ.get("SECRET_KEY") or 'dev_key',
+        SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL'],
         SQLALCHEMY_TRACK_MODIFICATIONS = False,
         TESTING = True
     )
