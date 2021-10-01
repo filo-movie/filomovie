@@ -1,3 +1,4 @@
+from operator import truediv
 import os
 from flask import Flask
 from filomovie.database.models import create_database
@@ -11,6 +12,7 @@ NOTE: database setup boilerplate code. modify to your needs
 
 # initialize app and database connection
 def create_app():
+    print("[*] Creating App....", flush=True) 
     app = Flask(__name__,
                 static_folder= 'static',
                 template_folder='static/templates')
@@ -45,5 +47,7 @@ if app.config.get("TESTING"):
     db.session.add(Integer(3))
     list_of_integer_objects = Integer.query.all()
     if (list(map(lambda integer_obj: integer_obj.integer, list_of_integer_objects)) == [1, 2, 3]):
-        print("##### Database connection test successful! #####")
+        print("[*] ##### Database connection test successful! #####", flush=True) 
+    else:
+        print("[*] ##### Database connection failed! #####", flush=True) 
 
