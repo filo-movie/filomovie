@@ -1,4 +1,4 @@
-from filomovie import db
+from models import db
 
 from flask_sqlalchemy import SQLAlchemy
 

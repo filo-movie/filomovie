@@ -1,7 +1,7 @@
 import os
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from database.models import create_database
+from filomovie.database.models import create_database
+from flask_migrate import Migrate
 
 '''
 NOTE: database setup boilerplate code. modify to your needs 
@@ -27,3 +27,5 @@ def create_app():
 app = create_app()
 
 db = create_database(app)
+
+migrate = Migrate(app, db)

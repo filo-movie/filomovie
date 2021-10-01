@@ -5,11 +5,10 @@ def create_database(app):
 
     class Integer(db.Model):
         __tablename__ = "testTable"
-        integer = db.Column(db.Integer)
+        integer = db.Column(db.Integer, primary_key=True)
 
         def __init__(self, integer):
             self.integer = integer
 
     return db
-
 
