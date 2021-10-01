@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from filomovie.database.models import create_database
 from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
 
 '''
 NOTE: database setup boilerplate code. modify to your needs 
@@ -25,7 +26,24 @@ def create_app():
 
 
 app = create_app()
+db = SQLAlchemy(app)
 
-db = create_database(app)
+
+class Integer(db.Model):
+    __tablename__ = "testTable"
+    integer = db.Column(db.Integer, primary_key=True)
+
+    def __init__(self, integer):
+        self.integer = integer
+
 
 migrate = Migrate(app, db)
+
+if app.config.get("TESTING"):
+    db.session.add(Integer(1))
+    db.session.add(Integer(2))
+    db.session.add(Integer(3))
+    list_of_integer_objects = Integer.query.all()
+    if (list(map(lambda integer_obj: integer_obj.integer, list_of_integer_objects)) == [1, 2, 3]):
+        print("##### Database connection test successful! #####")
+
