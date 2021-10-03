@@ -18,7 +18,7 @@ def create_app():
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
         TESTING=True
     )
-
+    
     return app
 
 
@@ -27,4 +27,3 @@ db, Integer = create_database(app)
 if app.config.get("TESTING"):
     test_conn(db, Integer)
 migrate = Migrate(app, db)
-
