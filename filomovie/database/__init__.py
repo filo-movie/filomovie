@@ -24,4 +24,19 @@ def create_database(app):
         def __init__(self, integer):
             self.integer = integer
 
-    return db, Integer
+    class Movie(db.Model):
+        __tablename__ = "Movies"
+        id = db.Column(db.TEXT, primary_key=True)
+        image = db.Column(db.VARCHAR)
+        title = db.Column(db.VARCHAR)
+        description = db.Column(db.TEXT)
+        streaming_services = db.Column(db.TEXT)
+
+        def __init__(self, id, image, title, description, streaming_servies):
+            self.id = id
+            self.image = image
+            self.title = title
+            self.description = description
+            self.streaming_services = streaming_servies
+
+    return db, {"Integer": Integer, "Movie": Movie}

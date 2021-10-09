@@ -23,7 +23,7 @@ def create_app():
 
 
 app = create_app()
-db, Integer = create_database(app)
+db, schema_dictionary = create_database(app)
 if app.config.get("TESTING"):
-    test_conn(db, Integer)
+    test_conn(db, schema_dictionary["Integer"])
 migrate = Migrate(app, db)
