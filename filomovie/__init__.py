@@ -3,6 +3,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
+from filomovie import database
+
 '''
 NOTE: database setup boilerplate code. modify to your needs
 '''
@@ -31,7 +33,7 @@ def create_app():
 
 
 app = create_app()
-db, schema_dictionary = create_database(app)
+db, schema_dictionary = database.create_database(app)
 if app.config.get("TESTING"):
-    test_conn(db, schema_dictionary["Integer"])
+    database.test_conn(db, schema_dictionary["Integer"])
 migrate = Migrate(app, db)
