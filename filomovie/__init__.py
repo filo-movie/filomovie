@@ -4,8 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 '''
-NOTE: database setup boilerplate code. modify to your needs 
-''' 
+NOTE: database setup boilerplate code. modify to your needs
+'''
 
 # create db object
 # db = SQLAlchemy()
@@ -31,5 +31,7 @@ def create_app():
 
 
 app = create_app()
-
-
+db, schema_dictionary = create_database(app)
+if app.config.get("TESTING"):
+    test_conn(db, schema_dictionary["Integer"])
+migrate = Migrate(app, db)
