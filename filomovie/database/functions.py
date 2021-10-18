@@ -6,6 +6,9 @@ def insert_movie(db, Movie, id, image, title, description, streaming_services):
     if Movie.query.filter_by(id=id).all():
         print("Movie already present in the database")
         return False
+    elif type(id) != int or type(image) != str or type(title) != str or type(description) != str or type(streaming_services) != str:
+        print("One or more of the input values was of the incorrect type.")
+        return False
     else:
         db.session.add(Movie(id, image, title, description, streaming_services))
         db.session.commit()

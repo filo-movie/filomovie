@@ -16,7 +16,6 @@ def create_app():
         SECRET_KEY=os.environ.get("SECRET_KEY") or 'dev_key',
         SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URL").replace("postgres", "postgresql"),
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
-        TESTING=True
     )
     
     return app
@@ -24,6 +23,4 @@ def create_app():
 
 app = create_app()
 db, relation_dictionary = database.create_database(app)
-if app.config.get("TESTING"):
-    database.test_conn(db, relation_dictionary["Integer"])
 migrate = Migrate(app, db)
