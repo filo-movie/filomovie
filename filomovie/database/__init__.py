@@ -26,7 +26,7 @@ def create_database(app):
 
     class Movie(db.Model):
         __tablename__ = "Movies"
-        id = db.Column(db.TEXT, primary_key=True)
+        id = db.Column(db.INTEGER, primary_key=True)
         image = db.Column(db.VARCHAR)
         title = db.Column(db.VARCHAR)
         description = db.Column(db.TEXT)
