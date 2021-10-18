@@ -2,7 +2,7 @@ import unittest
 from flask import Flask
 import os
 from filomovie import database
-from filomovie.database import functions
+from filomovie.database import base_functions
 
 def create_app():
     print("[*] Creating App....", flush=True)
@@ -37,7 +37,7 @@ class TestInsert(unittest.TestCase):
     # Test that a set of values can be inserted and queried correctly. Then deletes the value.
     def test_insert(self):
         drop_test_values()
-        self.assertTrue(functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
+        self.assertTrue(base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
                                                "A movie about an ogre and a donkey.",
                                                "Available on some streaming services"))
         insertedValue = relation_dictionary["Movie"].query.filter_by(id=-1).all()
@@ -51,33 +51,33 @@ class TestInsert(unittest.TestCase):
     # Test that the function returns False if a movie with the same id already exists. Then deletes the value.
     def test_double_insert(self):
         drop_test_values()
-        self.assertTrue(functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
+        self.assertTrue(base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
                                                "A movie about an ogre and a donkey.",
                                                "Available on some streaming services"))
-        self.assertFalse(functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
+        self.assertFalse(base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
                                                "A movie about an ogre and a donkey.",
                                                "Available on some streaming services"))
         drop_test_values()
 
     # Test that the function returns False if one or more input values are of the incorrect type.
     def test_input_types(self):
-        self.assertFalse(functions.insert_movie(db, relation_dictionary["Movie"], -1, -1, -1, -1, -1))
+        self.assertFalse(base_functions.insert_movie(db, relation_dictionary["Movie"], -1, -1, -1, -1, -1))
 
 class TestQuery(unittest.TestCase):
     # Tests that an empty list is returned if no movie title matches the search, an empty list evaluates to false.
     def test_noMovie(self):
-        self.assertFalse(functions.search_title(relation_dictionary["Movie"], "QWERTY"))
+        self.assertFalse(base_functions.search_title(relation_dictionary["Movie"], "QWERTY"))
 
     # Tests that all relevant movies are returned when searched by title.
     def test_return_movies(self):
         drop_test_values()
-        functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
+        base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
                                "A movie about an ogre and a donkey.",
                                "Available on some streaming services")
-        functions.insert_movie(db, relation_dictionary["Movie"], -2, "Some image", "Shrek",
+        base_functions.insert_movie(db, relation_dictionary["Movie"], -2, "Some image", "Shrek",
                                "A movie about an ogre and a donkey.",
                                "Available on some streaming services")
-        records = functions.search_title(relation_dictionary["Movie"], "Shrek")
+        records = base_functions.search_title(relation_dictionary["Movie"], "Shrek")
         self.assertEqual(records[0].id, -1)
         self.assertEqual(records[0].image, "Some image")
         self.assertEqual(records[0].title, "Shrek")
