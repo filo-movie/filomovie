@@ -11,7 +11,7 @@ def insert_movie(id, image, title, description, streaming_services):
 def search_title(title):
     return base_functions.search_title(relation_dictionary["Movie"], title)
 
-api.api_parse
+api.api_parse()
 with open("data2send.txt") as f:
     for line in f:
         data = json.loads(line)
