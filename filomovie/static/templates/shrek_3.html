@@ -11,15 +11,21 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="{{url_for('home')}}">Home Page</a>
 
-    <div>
-        <img class="movieposter_specific" src="{{url_for('static', filename='images/Shrek_3.jpg')}}" alt="A movie poster of Shrek 3">
-        <p>Once upon a time, in a far away swamp, there lived an ogre named Shrek (Mike Myers) whose precious solitude is suddenly shattered by an invasion of annoying fairy tale characters. They were all banished from their kingdom by the evil Lord Farquaad (John Lithgow). Determined to save their home -- not to mention his -- Shrek cuts a deal with Farquaad and sets out to rescue Princess Fiona (Cameron Diaz) to be Farquaad's bride. Rescuing the Princess may be small compared to her deep, dark secret.</p>
-        <h1 class="API">Netflix</h1>
-        <h1 class="API">Amazon Prime</h1>
-        <h1 class="API">Disney+</h1>
-        <h1 class="API">Hulu</h1>
+    <div class="container">
+        <div class="movie_poster_and_description">
+            <img class="movieposter_specific" src="{{url_for('static', filename='images/Shrek_3.jpg')}}" alt="A movie poster of Shrek">
+            <p class="moviedescription_specific">Once upon a time, in a far away swamp, there lived an ogre named Shrek (Mike Myers) whose precious solitude is suddenly shattered by an invasion of annoying fairy tale characters. They were all banished from their kingdom by the evil Lord Farquaad (John Lithgow). Determined to save their home -- not to mention his -- Shrek cuts a deal with Farquaad and sets out to rescue Princess Fiona (Cameron Diaz) to be Farquaad's bride. Rescuing the Princess may be small compared to her deep, dark secret.</p>
+        </div>
+        <div class="streaming_services">
+            <h1 class="streaming_title">Available on</h1>
+            <p class="API">Amazon Prime</p>
+            <p class="API">Hulu</p>
+            <p class="API">Netflix</p>
+        </div>
     </div>
+
+    <a href="{{url_for('search')}}" class="back_button">Back to Search</a>
+
 </body>
 </html>
