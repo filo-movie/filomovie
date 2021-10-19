@@ -20,7 +20,6 @@ def create_app():
     
     return app
 
-
 app = create_app()
-db, relation_dictionary = database.create_database(app)
+db, relation_dictionary = filomovie.database.create_database(app)
 migrate = Migrate(app, db)
