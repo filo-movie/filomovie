@@ -43,4 +43,4 @@ api_parse()
 with open("data2send.txt") as f:
     for line in f:
         data = json.loads(line)
-        insert_movie(data['movie_id'], data['movie_image'], data['movie_title'], data['movie_desc'], data['stream_providers'])
+        insert_movie(data['movie_id'], data['movie_image'], data['movie_title'], data['movie_desc'], json.dumps(data['stream_providers']))
