@@ -1,7 +1,10 @@
+import json
+from filomovie.database.functions import insert_movie
+
 def api_parse():
     from urllib.request import urlopen
     import json
-    apikey = 'api_key_here'
+    apikey = 'df6bf47dab73bc03ab03b122a62753c9'
     baseurl = 'https://api.themoviedb.org/3/movie/'
     posterpath = 'https://image.tmdb.org/t/p/original'
 
@@ -34,4 +37,10 @@ def api_parse():
             dump = json.dumps(info_dict)
             g = open("data2send.txt", "a")
             g.write(dump + '\n')
-    g.close()
+            g.close()
+
+api_parse()
+with open("data2send.txt") as f:
+    for line in f:
+        data = json.loads(line)
+        insert_movie(data['movie_id'], data['movie_image'], data['movie_title'], data['movie_desc'], data['stream_providers'])

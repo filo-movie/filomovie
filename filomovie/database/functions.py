@@ -1,7 +1,5 @@
 from filomovie import db, relation_dictionary
 from filomovie.database import base_functions
-from filomovie.api import api
-import json
 
 # Inserts a Movie tuple into the database with the given variables. ID MUST BE UNIQUE PER MOVIE.
 def insert_movie(id, image, title, description, streaming_services):
@@ -11,11 +9,6 @@ def insert_movie(id, image, title, description, streaming_services):
 def search_title(title):
     return base_functions.search_title(relation_dictionary["Movie"], title)
 
-api.api_parse()
-with open("data2send.txt") as f:
-    for line in f:
-        data = json.loads(line)
-        insert_movie(data['movie_id'], data['movie_image'], data['movie_title'], data['movie_desc'], data['stream_providers'])
 # SAMPLE INSERT AND DELETE
 '''
 insert_movie(-1, "Some image", "Shrek", "A movie about an ogre and a donkey.", "Available on some streaming services")
