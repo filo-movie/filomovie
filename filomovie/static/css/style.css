@@ -50,9 +50,7 @@ p.movietitle {
     text-justify: distribute-all-lines;
 }
 
-#movies a {
-    display: inline-block;
-    
+
     
     
 }
@@ -461,18 +459,18 @@ for phones
     }
     
     .s1 {
-        margin-right: auto;
-        margin-left: 25%;
+        margin-right: 15%;
+        margin-left: 15%;
     }
     
     .s2 {
-        margin-right: 10%;
-        margin-left: 10%;
+        margin-right: 5%;
+        margin-left: 5%;
         margin-top: 0.5%
     }
     
     .s3 {
-        margin-right: 5%;
-        margin-left: auto;
+        margin-right: 15%;
+        margin-left: 15%;
     }
 }
