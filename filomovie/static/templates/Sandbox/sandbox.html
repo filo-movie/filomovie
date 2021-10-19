@@ -6,20 +6,28 @@
         <meta name="description" content="FiloMovies is a movie search up website project for CSE442">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="{{url_for('static', filename='images/movie-symbol-of-video-camera_icon-icons.com_72981.png')}}">
+        <link rel="icon" href="../../images/movie-symbol-of-video-camera_icon-icons.com_72981.png">
+        <link rel="stylesheet" href="sandboxstyle.css">
     </head>
 
     <body>
-        <h1>FiloMovies</h1>
 
-        <!--this action="" will bring the input to the backend when the GO button is clicked-->
-        <form action="../indextest.html">
-            <input name="movie_title" id="movie" type="text" placeholder="search movie">
-            <button type="submit">GO</button>
-        </form>
+        <div class="container">
+            <div class="movie_poster_and_description">
+                <img class="movieposter_specific" src="../../images/Shrek_1.jpg" alt="A movie poster of Shrek">
+                <p class="moviedescription_specific">Once upon a time, in a far away swamp, there lived an ogre named Shrek (Mike Myers) whose precious solitude is suddenly shattered by an invasion of annoying fairy tale characters. They were all banished from their kingdom by the evil Lord Farquaad (John Lithgow). Determined to save their home -- not to mention his -- Shrek cuts a deal with Farquaad and sets out to rescue Princess Fiona (Cameron Diaz) to be Farquaad's bride. Rescuing the Princess may be small compared to her deep, dark secret.</p>
+            </div>
+            <div class="streaming_services">
+                <h1 class="streaming_title">Available on</h1>
+                <p class="API">Netflix</p>
+                <p class="API">Amazon Prime</p>
+                <p class="API">Disney+</p>
+                <p class="API">Hulu</p>
+            </div>
+        </div>
 
-        <p>Find where you can stream your favorite movies!</p>
-        
+        <a href="../homepage.html" class="back_button">Back to Search</a>
+
     </body>
 
 </html>

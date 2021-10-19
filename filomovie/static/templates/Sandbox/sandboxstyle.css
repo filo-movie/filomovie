@@ -1,0 +1,100 @@
+/*col-sm-
+for phones
+*/
+@media (min-width: 360px) {
+    h1 {
+        color: #FFFFFF;
+    }
+}
+
+/*col-md-*/
+@media (min-width: 768px) {
+    h1 {
+        color: #3797d6;
+    }
+}
+
+/*col-lg-*/
+@media (min-width: 992px) {
+    h1 {
+        color: #25b325;
+    }
+}
+
+/*col-sm-xl*/
+@media (min-width: 1200px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #2B3846
+    }
+    p {
+        color: #FFFFFF;
+    }
+    h1 {
+        color: #FFFFFF;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 550px;
+        
+    }
+
+    .col {
+        flex: auto;
+    }
+
+    .movie_poster_and_description {
+        margin-left: 10%;
+        width: 600px;
+    }
+
+    .movieposter_specific {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        
+    }
+
+    .moviedescription_specific {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+    }
+    
+    .streaming_services {
+        margin-left: 5%;
+        width: 400px;
+    }
+
+    .streaming_title {
+        text-align: center;
+    }
+
+    .API {
+        background-color: #009C35;
+        height: 60px;
+        line-height: 60px;
+        font-size: 150%;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .back_button {
+        color: #FFFFFF;
+        background-color: #2768B5;
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        left: 80%;
+        text-decoration: none;
+    }
+}

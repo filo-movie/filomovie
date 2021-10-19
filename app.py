@@ -30,7 +30,8 @@ def home():
 def search():
     if request.method == "POST":
         searchedTitle = request.form.get("movie_title")
-        backend.process_data_example(searchedTitle)
+        # NOTE: #35 POST to search
+        backend.process_search(searchedTitle)
     return render_template('indextest.html')
 
 
