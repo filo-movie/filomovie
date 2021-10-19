@@ -7,10 +7,9 @@
 
         <link rel="icon" href="{{url_for('static', filename='images/movie-symbol-of-video-camera_icon-icons.com_72981.png')}}">
         <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <title>indextest</title>
-        <style>
-            
-        </style>
+        
     </head>
         
     <body>
@@ -19,7 +18,7 @@
 
         <h1>FiloMovies</h1>
 
-        <!--this action="" will bring the input to the backend when the GO button is clicked-->
+        <!--NOTE: #35 this action will bring the input to the backend when the GO button is clicked-->
         <form action="{{url_for('search')}}" method="post">
             <!--id="" will be useful for backend and css-->
             <!--only inputs with name="" will be submitted-->
@@ -27,24 +26,35 @@
             <button type="submit">GO</button>
         </form>
     
-        <div id="movies">
-            <a id="Shrek1" href="{{url_for('shrek1')}}">
-                <img class="movieposter_multiple" src="{{url_for('static', filename='images/Shrek_1.jpg')}}" alt="A movie poster of Shrek 1">
-                <p class="movietitle">Shrek</p>
-            </a>
-            
-            <a id="Shrek2" href="{{url_for('shrek2')}}">
-                <img class="movieposter_multiple" src="{{url_for('static', filename='images/Shrek_2.jpg')}}" alt="A movie poster of Shrek 2">
-                <p class="movietitle">Shrek 2</p>
-            </a>
+        <div class="movies">
 
-            <a id="Shrek3" href="{{url_for('shrek3')}}">
-                <img class="movieposter_multiple" src="{{url_for('static', filename='images/Shrek_3.jpg')}}" alt="A movie poster of Shrek 3">
-                <p class="movietitle">Shrek 3</p>
-            </a>
+            <div class = "s1">
+                <a id="Shrek1" href="{{url_for('shrek1')}}">
+                    <img class="movieposter_multiple" src="{{url_for('static', filename='images/Shrek_1.jpg')}}" alt="A movie poster of Shrek 1">
+                    <p class="movietitle">Shrek</p>
+                </a>
+            </div>
+            
+            <div class="s2">
+                <a id="Shrek2" href="{{url_for('shrek2')}}">
+                    <img class="movieposter_multiple" src="{{url_for('static', filename='images/Shrek_2.jpg')}}" alt="A movie poster of Shrek 2">
+                    <p class="movietitle">Shrek 2</p>
+                </a>
+            </div>
+
+            <div class="s3">
+                <a id="Shrek3" href="{{url_for('shrek3')}}">
+                    <img class="movieposter_multiple" src="{{url_for('static', filename='images/Shrek_3.jpg')}}" alt="A movie poster of Shrek 3">
+                    <p class="movietitle">Shrek 3</p>
+                </a>
+            </div>
+
             <span class="stretch"></span>
         </div>
         
+        <script src="jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
 
     </body>
 </html>
