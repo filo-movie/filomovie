@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="icon" href="../static/images/movie-symbol-of-video-camera_icon-icons.com_72981.png">-->
+    <link rel="icon" href="{{url_for('static', filename='images/movie-symbol-of-video-camera_icon-icons.com_72981.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+   
+
+    <p id="id"></p>
+    <p id="title"></p>
+    <p id="image"></p>
+    <p id="desc"></p>
+    <p id="providerslength"></p>
+    <p id="providers"></p>
+
+    
+    <script>
+        var clicked_movie = '{"movie_id": "1", "movie_title": "Shrek", "movie_image": "Shrek image", "movie_desc": "Shrek desc", "stream_providers": ["fubotV", "Showtime Amazon Channel", "Showtime Roku Premium Channel", "Showtime", "DIRECTV", "Spectrum On Demand"]}'
+
+        var obj = JSON.parse(clicked_movie)
+        document.getElementById("id").innerHTML = obj.movie_id;
+        document.getElementById("title").innerHTML = obj.movie_title;
+        document.getElementById("image").innerHTML = obj.movie_image;
+        document.getElementById("desc").innerHTML = obj.movie_desc;
+        document.getElementById("providerslength").innerHTML = obj.stream_providers.length;
+        document.getElementById("providers").innerHTML = obj.stream_providers[0];
+
+        
+    </script>
+
+</body>
+</html>
