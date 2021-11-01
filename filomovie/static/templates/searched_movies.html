@@ -17,7 +17,7 @@
         
 
         <script>
-            var obj = JSON.parse('{{ user | tojson | safe}}');
+            var obj = JSON.parse('{{ search_result | tojson | safe}}');
             //document.getElementById('username').innerHTML = user.firstname + " " + user.lastname;
 
             //parse the JSON data
