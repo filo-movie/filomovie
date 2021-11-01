@@ -14,7 +14,7 @@ from filomovie import app
 
 @app.route('/', methods=('GET', 'POST'))
 def index():
-    return render_template('searched_movies.html')
+    return render_template('index.html')
 
 
 @app.route('/home', methods=('GET', 'POST'))
@@ -30,9 +30,11 @@ def home():
 def search():
     if request.method == "POST":
         searchedTitle = request.form.get("movie_title")
-        # NOTE: #35 POST to search
+        # this is supposed to send JSON data to searched_movies.html
         backend.process_search(searchedTitle)
-    return render_template('searched_movies.html')
+    # user is a JSON object
+    user = {"movie_id": "2", "movie_title": "Forrest Gump", "movie_image": "https://image.tmdb.org/t/p/original/saHP97rTPS5eLmrLQEcANmKrsFl.jpg", "movie_desc": "A man with a low IQ has accomplished great things in his life and been present during significant historic events-in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.", "stream_providers": ["fubotV", "Showtime Amazon Channel", "Showtime Roku Premium Channel", "Showtime", "DIRECTV", "Spectrum On Demand"]}
+    return render_template('searched_movies.html', user=user)
 
 
 @app.route('/movie_details', methods=('GET', 'POST'))

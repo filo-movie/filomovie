@@ -32,4 +32,5 @@ def process_search(searchedMovie):
     # deleting dummy data
     functions.deleting_dummy_data()
 
+    # this is supposed to return a python dictionary
     return searchedMovie

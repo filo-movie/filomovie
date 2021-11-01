@@ -8,11 +8,41 @@
         <link rel="icon" href="{{url_for('static', filename='images/movie-symbol-of-video-camera_icon-icons.com_72981.png')}}">
         <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         <title>indextest</title>
-        
     </head>
         
     <body>
+        
+
+        <script>
+            var obj = JSON.parse('{{ user | tojson | safe}}');
+            //document.getElementById('username').innerHTML = user.firstname + " " + user.lastname;
+
+            //parse the JSON data
+
+            
+            //modify html using the parsed JSON data
+            $("document").ready(function(){
+                
+                //insert movie poster image
+                $(".movieposter_multiple").attr("src", obj.movie_image);
+                $(".movieposter_multiple").attr("alt", "A movie poster of " + obj.movie_title);
+
+                //insert movie description
+                //$("#desc").html(obj.movie_desc);
+
+                //insert movie title
+                $(".movietitle").html(obj.movie_title)
+                
+                //insert streaming services
+                //$.each(obj.stream_providers, function(index, value) {
+                //    $(".streaming_services").append("<p class='API'>" + value + "</p>");
+                //});
+
+            });
+        </script>
 
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Click Me</a>
 
@@ -22,8 +52,8 @@
         <form action="{{url_for('search')}}" method="post">
             <!--id="" will be useful for backend and css-->
             <!--only inputs with name="" will be submitted-->
-            <input required name="movie_title" id="movie_title" type="text" placeholder="search movie">
-            <button type="submit" onclick="tableFromJson()">GO</button>
+            <input required name="movie_title" id="movie_title" type="text" placeholder="search movie" minlength="1">
+            <button type="submit">GO</button>
         </form>
 
         <p id="showData"></p>
