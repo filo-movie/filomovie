@@ -14,12 +14,12 @@ from filomovie import app
 
 @app.route('/', methods=('GET', 'POST'))
 def index():
-    return render_template('indextest.html')
+    return render_template('searched_movies.html')
 
 
 @app.route('/home', methods=('GET', 'POST'))
 def home():
-    return render_template('indextest.html')
+    return render_template('searched_movies.html')
 
 
 '''
@@ -32,12 +32,12 @@ def search():
         searchedTitle = request.form.get("movie_title")
         # NOTE: #35 POST to search
         backend.process_search(searchedTitle)
-    return render_template('indextest.html')
+    return render_template('searched_movies.html')
 
 
-@app.route('/clicked_movie', methods=('GET', 'POST'))
-def clicked_movie():
-    return render_template('clicked_movie.html')
+@app.route('/movie_details', methods=('GET', 'POST'))
+def movie_details():
+    return render_template('movie_details.html')
 
 
 if __name__ == '__main__':
