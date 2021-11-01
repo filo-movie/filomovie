@@ -35,17 +35,9 @@ def search():
     return render_template('indextest.html')
 
 
-@app.route('/shrek1', methods=('GET', 'POST'))
-def shrek1():
-    return render_template('shrek_1.html')
-
-@app.route('/shrek2', methods=('GET', 'POST'))
-def shrek2():
-    return render_template('shrek_2.html')
-
-@app.route('/shrek3', methods=('GET', 'POST'))
-def shrek3():
-    return render_template('shrek_3.html')
+@app.route('/clicked_movie', methods=('GET', 'POST'))
+def clicked_movie():
+    return render_template('clicked_movie.html')
 
 
 if __name__ == '__main__':
