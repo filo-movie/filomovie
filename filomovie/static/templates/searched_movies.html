@@ -19,34 +19,46 @@
         <script>
             // Parse movie result json object
             var movieObjList = JSON.parse('{{ search_result | tojson | safe}}');
-
-
-            // #52 iterate through the movie list and display posters
-            // FIXME: afee needs to verify if all posters will show up or not
-            for (var i = 0, len = movieObjList.moviesFound.length; i < len; ++i) {
-                console.log(i);
-
-                var curMovieObj = movieObjList.moviesFound[i];
-                console.log(movieObjList);
-
+            
+            // FIXME: Movie Not Found
+            if (movieObjList.moviesFound.length == 0){
                 $("document").ready(function(){
-                
-                //insert movie poster image
-                $(".movieposter_multiple").attr("src", curMovieObj.movie_image);
-                $(".movieposter_multiple").attr("alt", "A movie poster of " + curMovieObj.movie_title);
+                    //insert movie poster image
+                    $(".movieposter_multiple").attr("src", "");
+                    $(".movieposter_multiple").attr("alt", "");
 
-                //insert movie description
-                //$("#desc").html(curMovieObj.movie_desc);
+                    //insert movie title
+                    $(".movietitle").html("")
 
-                //insert movie title
-                $(".movietitle").html(curMovieObj.movie_title)
-                
-                //insert streaming services
-                //$.each(curMovieObj.stream_providers, function(index, value) {
-                //    $(".streaming_services").append("<p class='API'>" + value + "</p>");
-                //});
+                });   
+            }
+            else{
+                // #52 iterate through the movie list and display posters
+                // FIXME: afee needs to verify if all posters will show up or not
+                for (var i = 0, len = movieObjList.moviesFound.length; i < len; ++i) {
+                    console.log(i);
 
-            });
+                    var curMovieObj = movieObjList.moviesFound[i];
+                    console.log(movieObjList);
+
+                    $("document").ready(function(){
+                        //insert movie poster image
+                        $(".movieposter_multiple").attr("src", curMovieObj.movie_image);
+                        $(".movieposter_multiple").attr("alt", "A movie poster of " + curMovieObj.movie_title);
+
+                        //insert movie description
+                        $("#desc").html(curMovieObj.movie_desc);
+
+                        //insert movie title
+                        $(".movietitle").html(curMovieObj.movie_title)
+                        
+                        //insert streaming services
+                        $.each(curMovieObj.stream_providers, function(index, value) {
+                        $(".streaming_services").append("<p class='API'>" + value + "</p>");
+                        });
+
+                    });
+                }
             }
 
         </script>
