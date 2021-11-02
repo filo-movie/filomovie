@@ -16,12 +16,7 @@
             // FIXME: Movie Not Found
             if (movieObjList.moviesFound.length == 0){
                 $("document").ready(function(){
-                    //insert movie poster image
-                    $(".movieposter_multiple").attr("src", "");
-                    $(".movieposter_multiple").attr("alt", "");
-
-                    //insert movie title
-                    $(".movietitle").html("")
+                    $(".error").html("Movie not found (search is case sensitive and must type out the movie title exactly)")
 
                 });   
             }
@@ -76,6 +71,8 @@
             <button type="submit">GO</button>
         </form>
     
+        <p class="error"></p>
+
         <div class="movies">
 
             <!--template for a movie to be added-->

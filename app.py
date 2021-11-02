@@ -16,7 +16,7 @@ def index():
 
 @app.route('/home', methods=('GET', 'POST'))
 def home():
-    return render_template('searched_movies.html')
+    return render_template('index.html')
 
 
 '''
