@@ -21,10 +21,10 @@ def insert_movie(db, Movie, id, image, title, description, streaming_services):
 def search_title(Movie, title):
     movies_found = Movie.query.filter_by(title=title).all()
     if movies_found:
-        print('\033[92m' + "[*] Search results for the movie: " + title)
-        for movie in movies_found:
-            print(f"\tid={movie.id}, \n\timage={movie.image}, \n\ttitle={movie.title}, \n\tdescription={movie.description}, \n\tstreaming_services={movie.streaming_services}" + '\033[0m')
-        print()
+        print('\033[92m' + "[*] Search results for the movie: " + title + " found.\033[0m")
+        # for movie in movies_found:
+        #     print(f"\tid={movie.id}, \n\timage={movie.image}, \n\ttitle={movie.title}, \n\tdescription={movie.description}, \n\tstreaming_services={movie.streaming_services}" + '\033[0m')
+        # print()
         return movies_found
     else:
         return []
