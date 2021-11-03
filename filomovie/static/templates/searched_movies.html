@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" href="{{url_for('static', filename='images/movie-symbol-of-video-camera_icon-icons.com_72981.png')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            // Parse movie result json object
+            var movieObjList = JSON.parse('{{ search_result | tojson | safe}}');
+            
+            // FIXME: Movie Not Found
+            if (movieObjList.moviesFound.length == 0){
+                $("document").ready(function(){
+                    $(".error").html("Movie not found (search is case sensitive and must type out the movie title exactly)")
+
+                });   
+            }
+            else{
+                // #52 iterate through the movie list and display posters
+                // FIXME: afee needs to verify if all posters will show up or not
+                for (var i = 0, len = movieObjList.moviesFound.length; i < len; ++i) {
+                    console.log(i);
+
+                    var curMovieObj = movieObjList.moviesFound[i];
+                    console.log(movieObjList);
+
+                    $("document").ready(function(){
+
+                        //insert new movie box for movie
+                        $(".movies").append("<div class='s1'></div>");
+
+                        //insert new <a> for movie
+                        $(".s1").append("<a id='" + curMovieObj.movie_id + "' href='{{url_for('movie_details')}}'></a>");
+
+                        //append image to the <a id...>
+                        $("#" + curMovieObj.movie_id).append("<img id='" + curMovieObj.movie_title + "' class='movieposter_multiple' src='" + curMovieObj.movie_image + "' alt='A movie poster of " + curMovieObj.movie_title + "'/>");
+
+                        //append title to the <a id...>
+                        $("#" + curMovieObj.movie_id).append("<p id='t" +curMovieObj.movie_title + "' class='movietitle'>" + curMovieObj.movie_title + "</p>");
+                        
+
+                    });
+                }
+            $(".movies").append("<span class='stretch'></span>");
+            }
+
+        </script>
+
+        <title>indextest</title>
+    </head>
+        
+    <body>
+        
+
+        
+
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Click Me</a>
+
+        <h1>FiloMovies</h1>
+
+        <!--NOTE: #35 this action will bring the input to the backend when the GO button is clicked-->
+        <form action="{{url_for('search')}}" method="post">
+            <!--id="" will be useful for backend and css-->
+            <!--only inputs with name="" will be submitted-->
+            <input required name="movie_title" id="movie_title" type="text" placeholder="search movie" minlength="1">
+            <button type="submit">GO</button>
+        </form>
+    
+        <p class="error"></p>
+
+        <div class="movies">
+
+            <!--template for a movie to be added-->
+            <!--
+            <div class = "s1">
+                <a id="14" href="{{url_for('movie_details')}}">
+                    <img class="movieposter_multiple" src="" alt="A movie poster of Shrek 1"/>
+                    <p class="movietitle">Shrek</p>
+                </a>
+            </div>
+            -->
+            
+
+            <!--I put this line after the for loop in the script-->
+            <!--<span class="stretch"></span>-->
+
+        </div>
+        
+        <script src="jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+
+    </body>
+</html>
