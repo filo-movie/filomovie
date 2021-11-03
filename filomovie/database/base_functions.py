@@ -1,3 +1,4 @@
+from sqlalchemy import func
 # Function takes the database connection (db), the Movie table/object, the movie id, movie image,
 # movie title, movie description, and movie streaming_services.
 # Adds the data to the database if it doesn't exist already and returns True.
@@ -19,7 +20,7 @@ def insert_movie(db, Movie, id, image, title, description, streaming_services):
 # Searches the title in the database and returns a list of all records that match.
 # If no records exist, returns an empty list (will act as False if called in logic).
 def search_title(Movie, title):
-    movies_found = Movie.query.filter_by(title=title).all()
+    movies_found = Movie.query.filter(func.lower(Movie.title).contains(title.lower())).all()
     if movies_found:
         print('\033[92m' + "[*] Search results for the movie: " + title)
         for movie in movies_found:

@@ -90,6 +90,40 @@ class TestQuery(unittest.TestCase):
         self.assertEqual(records[1].streaming_services, "Available on some streaming services")
         drop_test_values()
 
+    def test_ifStringContainsTitle(self):
+        drop_test_values()
+        base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
+                                    "A movie about an ogre and a donkey.",
+                                    "Available on some streaming services")
+        base_functions.insert_movie(db, relation_dictionary["Movie"], -2, "Some image", "Shrek 2",
+                                    "The second movie about an ogre and a donkey.",
+                                    "Available on some streaming services")
+        records = base_functions.search_title(relation_dictionary["Movie"], "Shrek")
+        self.assertEqual(records[0].id, -1)
+        self.assertEqual(records[0].image, "Some image")
+        self.assertEqual(records[0].title, "Shrek")
+        self.assertEqual(records[0].description, "A movie about an ogre and a donkey.")
+        self.assertEqual(records[0].streaming_services, "Available on some streaming services")
+        self.assertEqual(records[1].id, -2)
+        self.assertEqual(records[1].image, "Some image")
+        self.assertEqual(records[1].title, "Shrek 2")
+        self.assertEqual(records[1].description, "The second movie about an ogre and a donkey.")
+        self.assertEqual(records[1].streaming_services, "Available on some streaming services")
+        drop_test_values()
+
+    def test_caseInsensitive(self):
+        drop_test_values()
+        base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
+                                    "A movie about an ogre and a donkey.",
+                                    "Available on some streaming services")
+        records = base_functions.search_title(relation_dictionary["Movie"], "shReK")
+        self.assertEqual(records[0].id, -1)
+        self.assertEqual(records[0].image, "Some image")
+        self.assertEqual(records[0].title, "Shrek")
+        self.assertEqual(records[0].description, "A movie about an ogre and a donkey.")
+        self.assertEqual(records[0].streaming_services, "Available on some streaming services")
+        drop_test_values()
+
 
 if __name__ == '__main__':
     unittest.main()
