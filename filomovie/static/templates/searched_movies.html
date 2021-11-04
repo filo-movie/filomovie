@@ -23,11 +23,7 @@
             else{
                 // #52 iterate through the movie list and display posters
                 // FIXME: afee needs to verify if all posters will show up or not
-                for (var i = 0, len = movieObjList.moviesFound.length; i < len; ++i) {
-                    console.log(i);
-
-                    var curMovieObj = movieObjList.moviesFound[i];
-                    console.log(movieObjList);
+                jQuery.each(movieObjList.moviesFound, function(i, val) {
 
                     $("document").ready(function(){
 
@@ -35,17 +31,40 @@
                         $(".movies").append("<div class='s1'></div>");
 
                         //insert new <a> for movie
-                        $(".s1").append("<a id='" + curMovieObj.movie_id + "' href='{{url_for('movie_details')}}'></a>");
+                        $(".s1").append("<a id='" + movieObjList.moviesFound[i].movie_id + "' href='{{url_for('movie_details')}}'></a>");
 
                         //append image to the <a id...>
-                        $("#" + curMovieObj.movie_id).append("<img id='" + curMovieObj.movie_title + "' class='movieposter_multiple' src='" + curMovieObj.movie_image + "' alt='A movie poster of " + curMovieObj.movie_title + "'/>");
+                        $("#" + movieObjList.moviesFound[i].movie_id).append("<img id='" + movieObjList.moviesFound[i].movie_title + "' class='movieposter_multiple' src='" + movieObjList.moviesFound[i].movie_image + "' alt='A movie poster of " + movieObjList.moviesFound[i].movie_title + "'/>");
 
                         //append title to the <a id...>
-                        $("#" + curMovieObj.movie_id).append("<p id='t" +curMovieObj.movie_title + "' class='movietitle'>" + curMovieObj.movie_title + "</p>");
+                        $("#" + movieObjList.moviesFound[i].movie_id).append("<p id='t" +movieObjList.moviesFound[i].movie_title + "' class='movietitle'>" + movieObjList.moviesFound[i].movie_title + "</p>");
                         
 
                     });
-                }
+
+                });
+                
+                // for (var i = 0; i < movieObjList.moviesFound.length; ++i) {
+
+                //     var curMovieObj = movieObjList.moviesFound[i];
+
+                //     $("document").ready(function(){
+
+                //         //insert new movie box for movie
+                //         $(".movies").append("<div class='s1'></div>");
+
+                //         //insert new <a> for movie
+                //         $(".s1").append("<a id='" + curMovieObj.movie_id + "' href='{{url_for('movie_details')}}'></a>");
+
+                //         //append image to the <a id...>
+                //         $("#" + curMovieObj.movie_id).append("<img id='" + curMovieObj.movie_title + "' class='movieposter_multiple' src='" + curMovieObj.movie_image + "' alt='A movie poster of " + curMovieObj.movie_title + "'/>");
+
+                //         //append title to the <a id...>
+                //         $("#" + curMovieObj.movie_id).append("<p id='t" +curMovieObj.movie_title + "' class='movietitle'>" + curMovieObj.movie_title + "</p>");
+                        
+
+                //     });
+                // }
             $(".movies").append("<span class='stretch'></span>");
             }
 
@@ -72,6 +91,7 @@
           </form>
         </div>
         
+        <div class="mo"></div>
         <p class="error"></p>
 
         <div class="movies">
