@@ -14,7 +14,7 @@ from filomovie import relation_dictionary
 # backend processing search
 def process_search(searchedMovie):
 
-    functions.filling_up_database()
+    # functions.filling_up_database()
     # print('\033[95m' + "[*] You searched: " + searchedMovie + '\033[0m' + "\n", flush=True)
 
     # search_movie_query = functions.search_title(searchedMovie) #[0]
@@ -41,8 +41,11 @@ def process_search(searchedMovie):
         curObj['streaming_services'] = movie.streaming_services.replace('"', '\\"')
         movieJsonObj['moviesFound'].append(curObj)
 
+    # outputText = str(movieJsonObj['moviesFound'])
+    # print(outputText.encode("utf-8"), flush=True)
+
     # deleting dummy data
-    functions.deleting_dummy_data()
+    # functions.deleting_dummy_data()
 
     # this is supposed to return a python dictionary
     return movieJsonObj
