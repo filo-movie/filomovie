@@ -59,18 +59,19 @@
 
         
 
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Click Me</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Free Candy</a>
 
-        <h1>FiloMovies</h1>
 
         <!--NOTE: #35 this action will bring the input to the backend when the GO button is clicked-->
-        <form action="{{url_for('search')}}" method="post">
+        <div class = "nunu">
+          <form action="{{url_for('search')}}" method="post">
             <!--id="" will be useful for backend and css-->
             <!--only inputs with name="" will be submitted-->
             <input required name="movie_title" id="movie_title" type="text" placeholder="search movie" minlength="1">
-            <button type="submit">GO</button>
-        </form>
-    
+            <button type="submit" class = "go">GO</button>
+          </form>
+        </div>
+        
         <p class="error"></p>
 
         <div class="movies">
