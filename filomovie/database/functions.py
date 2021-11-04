@@ -9,6 +9,8 @@ def insert_movie(id, image, title, description, streaming_services):
 def search_title(title):
     return base_functions.search_title(relation_dictionary["Movie"], title)
 
+def delete_movie(id):
+    return base_functions.delete_movie(db, relation_dictionary["Movie"], id)
 
 # NOTE: test filling up dummy data for search
 def filling_up_database():
@@ -17,7 +19,7 @@ def filling_up_database():
     db.session.commit()
 
 
-# NOTE: delete dummy data from database 
+# NOTE: delete dummy data from database
 def deleting_dummy_data():
     print('\033[92m' + "[*] Deleting dummy data \"Shrek\" in Movie database... " + '\033[0m' + "\n", flush=True)
     Shrek = search_title("Shrek") #[0]
@@ -25,7 +27,6 @@ def deleting_dummy_data():
         foundShrek = Shrek[0]
         db.session.delete(foundShrek)
     db.session.commit()
-
 
 
 # SAMPLE INSERT AND DELETE. Test filling up database

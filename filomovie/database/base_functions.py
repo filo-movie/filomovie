@@ -30,3 +30,13 @@ def search_title(Movie, title):
     else:
         return []
 
+def delete_movie(db, Movie, id):
+    movies = Movie.query.filter_by(id=id).all()
+    if not movies:
+        return False
+    for movie in movies:
+        print(f"Deleting the following movie id: {str(id)}")
+        db.session.delete(movie)
+        db.session.commit()
+    return True
+
