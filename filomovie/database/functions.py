@@ -9,6 +9,9 @@ def insert_movie(id, image, title, description, streaming_services):
 def search_title(title):
     return base_functions.search_title(relation_dictionary["Movie"], title)
 
+def delete_movie(id):
+    return base_functions.delete_movie(db, relation_dictionary["Movie"], id)
+
 # SAMPLE INSERT AND DELETE
 '''
 insert_movie(-1, "Some image", "Shrek", "A movie about an ogre and a donkey.", "Available on some streaming services")
