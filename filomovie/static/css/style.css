@@ -79,6 +79,60 @@ for phones
         padding: 0;
         background: #2B3846
     }
+    
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 400px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 40%;
+         margin-left: 30%;
+         width: 50%;
+         padding: 10px;
+    }
+    
     p {
         color: #FFFFFF;
     }
@@ -173,6 +227,60 @@ for phones
         padding: 0;
         background: #2B3846
     }
+    
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 400px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 40%;
+         margin-left: 30%;
+         width: 50%;
+         padding: 10px;
+    }
+    
     p {
         color: #FFFFFF;
     }
@@ -269,6 +377,59 @@ for phones
         padding: 0;
         background: #2B3846
     }
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 400px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 40%;
+         margin-left: 30%;
+         width: 50%;
+         padding: 10px;
+    }
+    
     p {
         color: #FFFFFF;
     }
@@ -375,9 +536,63 @@ for phones
         padding: 0;
         background: #2B3846
     }
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 400px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 40%;
+         margin-left: 30%;
+         width: 50%;
+         padding: 10px;
+    }
+    
     p {
         color: #FFFFFF;
     }
+    
     h1 {
         color: #FFFFFF;
     }
