@@ -15,7 +15,7 @@ from filomovie import relation_dictionary
 def process_search(searchedMovie):
 
     functions.filling_up_database()
-    print('\033[95m' + "[*] You searched: " + searchedMovie + '\033[0m' + "\n", flush=True)
+    # print('\033[95m' + "[*] You searched: " + searchedMovie + '\033[0m' + "\n", flush=True)
 
     # search_movie_query = functions.search_title(searchedMovie) #[0]
     # found movie
