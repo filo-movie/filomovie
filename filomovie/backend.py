@@ -44,6 +44,9 @@ def process_search(searchedMovie):
     # outputText = str(movieJsonObj['moviesFound'])
     # print(outputText.encode("utf-8"), flush=True)
 
+    print("size of result: " + str(len(movieJsonObj['moviesFound'])), flush=True)
+
+
     # deleting dummy data
     # functions.deleting_dummy_data()
 
