@@ -35,6 +35,9 @@ def search():
 
     # print(search_result, flush=True)
 
+    # outputText = str(search_result)
+    # print(outputText.encode("utf-8"), flush=True)
+
     # this is supposed to the dictionary object to front end
     return render_template('searched_movies.html', search_result=search_result)
 
