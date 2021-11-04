@@ -1,11 +1,19 @@
 import json
-from filomovie.database.functions import insert_movie
+from filomovie.database.functions import insert_movie, delete_movie
 
 def check_en(dict_list):
     for elem in dict_list:
         if elem['iso_639_1'] == 'en':
             return True
     return False
+
+def filter_movies():
+    with open("filtered_data.txt", 'w') as outFile:
+        with open('movie_ids_10_18_2021.json', encoding='utf8') as inFile:
+            for line in inFile:
+                data = json.loads(line)
+                if data['popularity'] >= 10:
+                    outFile.write(json.dumps(data) + '\n')
 
 def api_parse():
     from urllib.request import urlopen
@@ -16,16 +24,21 @@ def api_parse():
 
     open("data2send.txt", "w").close()
     #movie_id, movie_image, movie_title, movie_desc, stream
-    with open('movie_ids_10_18_2021.json', encoding='utf8') as f:
+    with open('filtered_data.txt', 'r', encoding='utf8') as f:
         for line in f:
             info_dict = {'movie_id':"", 'movie_image':"", 'movie_title':"", 'movie_desc':"", 'stream_providers':""}
             stream = []
-            providers = []
             data = json.loads(line)
             movie_id = data['id']
+            if data['popularity'] < 10:
+                continue
             info_dict['movie_id'] = movie_id
             url = baseurl + str(movie_id) + '?api_key=' + apikey
-            output = urlopen(url)
+            try:
+                output = urlopen(url)
+            except:
+                print(f"Movie id: {str(movie_id)} not a URL")
+                continue
             info = json.loads(output.read())
             if info['original_language'] == 'en' and check_en(info['spoken_languages']):
                 info_dict['movie_title'] = info['title']
@@ -43,13 +56,8 @@ def api_parse():
                     else:
                         stream = []
                 info_dict['stream_providers'] = stream
-                dump = json.dumps(info_dict)
-                g = open("data2send.txt", "a", encoding='utf8')
-                g.write(dump + '\n')
-                g.close()
+                insert_movie(info_dict['movie_id'], info_dict['movie_image'], info_dict['movie_title'],
+                             info_dict['movie_desc'], json.dumps(info_dict['stream_providers']))
 
+filter_movies()
 api_parse()
-with open("data2send.txt") as f:
-    for line in f:
-        data = json.loads(line)
-        insert_movie(data['movie_id'], data['movie_image'], data['movie_title'], data['movie_desc'], json.dumps(data['stream_providers']))
