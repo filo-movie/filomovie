@@ -30,7 +30,7 @@
             
             //insert streaming services
             $.each(obj.stream_providers, function(index, value) {
-                $(".streaming_services").append("<p class='API'>" + value + "</p>");
+                $(".streaming_services").append("<div class='API'>" + value + "</div>");
             });
 
         });
@@ -49,9 +49,14 @@
             <h1 class="streaming_title">Available on</h1>
             <!-- this is where the script inserts the JSON data for streaming services-->
         </div>
+        
     </div>
+    <div class="back_button">
+        <a href="{{url_for('home')}}" >Back to Search</a>
+    </div>
+    
 
-    <a href="{{url_for('home')}}" class="back_button">Back to Search</a>
+    
 
     
     <!-- this was my attempt without jquery-->
