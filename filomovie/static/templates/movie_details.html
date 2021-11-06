@@ -32,9 +32,9 @@
             }
             else{
                 $.each(providersList, function(index, value) {
-                    $(".streaming_services").append("<div class='API'>" + value + "</div>");
+                    $(".streaming_title").after("<div class='API'>" + value + "</div>");
                 });
-            }
+            } 
 
         });
     </script>
@@ -43,7 +43,7 @@
 </head>
 
 
-    <div class="container">
+    <div class="movie-container">
         <div class="movie_poster_and_description">
             <img id="image" class="movieposter_specific" src="" alt=""/>
             <p id="desc" class="moviedescription_specific"></p>
@@ -51,12 +51,13 @@
         <div class="streaming_services">
             <h1 class="streaming_title">Available on</h1>
             <!-- this is where the script inserts the JSON data for streaming services-->
-        </div>
+        <div class="back_button">
+          <a href="{{url_for('home')}}" >Back to Search</a>
+        </div>        
         
+        </div>        
     </div>
-    <div class="back_button">
-        <a href="{{url_for('home')}}" >Back to Search</a>
-    </div>
+
     
 
     
