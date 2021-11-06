@@ -34,18 +34,19 @@ def search():
     return render_template('searched_movies.html', search_result=search_result)
 
 
+# json handler to handle json data after clicking on poster
 @app.route('/json_handler', methods=('GET', 'POST'))
 def json_handler():
     if request.method == "POST":
         movieDetails = request.get_json()
         session['movieDetails'] = movieDetails
-        # print("\tget request: " + str(movieDetails), flush=True)
+        print("\tget request: " + str(movieDetails), flush=True)
         movie_details()
         # return redirect(url_for("movie_details", movieDetails=movieDetails)) #, movieDetails=movieDetails))
     return ('', 204)
 
 
-
+# display movie_details page with session data
 @app.route('/movie_details', methods=('GET', 'POST'))
 def movie_details():
     curDetail = session['movieDetails']

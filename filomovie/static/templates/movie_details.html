@@ -24,11 +24,9 @@
             //insert movie description
             $("#desc").html(obj.movie_desc);
 
-            console.log(obj.streaming_services);
-
+            // iterate through provider list and insert into html
             var providersList = obj.streaming_services;
-            
-            //insert streaming services
+            // no provider available
             if (providersList.length == 0){
                 $(".streaming_services").append("<div class='API'>" + "No Provider Available! " + "</div>");
             }
