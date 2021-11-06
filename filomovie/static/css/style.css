@@ -50,7 +50,17 @@ p.movietitle {
     text-justify: distribute-all-lines;
 }
 
-
+.go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
 
 .stretch {
     width: 50%;
@@ -73,7 +83,470 @@ p.movietitle {
 /*col-sm-
 for phones
 */
+@media (min-width: 200px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #2B3846
+    }
+    
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 40px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 200px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 85%;
+         margin-left: 15%;
+         width: 50%;
+         padding: 10px;
+    }
+    
+    p {
+        color: #FFFFFF;
+    }
+    h1 {
+        color: #FFFFFF;
+    }
+    
+    .col {
+        flex: auto;
+    }
+
+    .movie_poster_and_description {
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 600px;
+    }
+
+    .movieposter_specific {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        
+    }
+
+    .moviedescription_specific {
+        display: flex;
+        margin-left: 5%;
+        margin-right: auto;
+        height: 150px;
+    }
+    
+    .streaming_services {
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+    }
+
+    .streaming_title {
+        text-align: center;
+    }
+
+    .API {
+        background-color: #009C35;
+        height: 60px;
+        line-height: 60px;
+        font-size: 150%;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    .back_button {
+        color: #FFFFFF;
+        background-color: #2768B5;
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        left: 80%;
+        text-decoration: none;
+        margin-top: 5%;
+    }
+    
+    .movies {
+        margin-top: 5%;
+    }
+    
+    .s1 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+    .s2 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+    .s3 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+}
+
+
 @media (min-width: 360px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #2B3846
+    }
+    
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 300px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 95%;
+         margin-left: 5%;
+         width: 50%;
+         padding: 10px;
+    }
+    
+    p {
+        color: #FFFFFF;
+    }
+    h1 {
+        color: #FFFFFF;
+    }
+    
+    .col {
+        flex: auto;
+    }
+
+    .movie_poster_and_description {
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 600px;
+    }
+
+    .movieposter_specific {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 200px;
+        max-width: 133px;
+        height: auto;
+        width: auto;
+        
+    }
+
+    .moviedescription_specific {
+        display: flex;
+        margin-left: 5%;
+        margin-right: auto;
+        height: 150px;
+    }
+    
+    .streaming_services {
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+    }
+
+    .streaming_title {
+        text-align: center;
+    }
+
+    .API {
+        background-color: #009C35;
+        height: 30px;
+        width: 300px;
+        line-height: 30px;
+        font-size: 100%;
+        text-align: center;
+        border-radius: 20px;
+        margin-bottom: 2%;
+        margin-left: 15%;
+        color: #FFFFFF;
+    }
+
+    .back_button {
+        color: #FFFFFF;
+        background-color: #2768B5;
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        left: 80%;
+        text-decoration: none;
+        margin-top: 5%;
+    }
+    
+    .movies {
+        margin-top: 5%;
+    }
+    
+    .s1 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+    .s2 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+    .s3 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+}
+
+@media (min-width: 400px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #2B3846
+    }
+    
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 300px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 90%;
+         margin-left: 10%;
+         width: 50%;
+         padding: 10px;
+    }
+    
+    p {
+        color: #FFFFFF;
+    }
+    h1 {
+        color: #FFFFFF;
+    }
+    
+    .col {
+        flex: auto;
+    }
+
+    .movie_poster_and_description {
+        margin-top: 5%;
+        margin-right: 1%;
+        width: 100%;
+        height: 300px;
+    }
+
+    .movieposter_specific {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width:100px;
+        max-height:150px;
+        height: auto;
+        width: auto;
+        
+    }
+
+    .moviedescription_specific {
+        display: flex;
+        margin-left: 5%;
+        margin-right: auto;
+        height: 150px;
+      
+    }
+    
+    .streaming_services {
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+    }
+
+    .streaming_title {
+        text-align: center;
+        font-size: 160%;
+    }
+
+    .API {
+        background-color: #009C35;
+        height: 30px;
+        width: 300px;
+        line-height: 30px;
+        font-size: 100%;
+        text-align: center;
+        border-radius: 20px;
+        margin-bottom: 2%;
+        margin-left: 15%;
+        color: #FFFFFF;
+    }
+
+    .back_button {
+        color: #FFFFFF;
+        background-color: #2768B5;
+        padding: 5px;
+        border-radius: 10px;
+        position: absolute;
+        left: 70%;
+        text-decoration: none;
+        margin-top: 5%;
+    }
+    
+    a:link { 
+        text-decoration: none; 
+    }
+    
+    .movies {
+        margin-top: 5%;
+    }
+    
+    .s1 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+    .s2 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+    .s3 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+}
+
+
+@media (min-width: 472px) {
     body {
         margin: 0;
         padding: 0;
@@ -178,11 +651,14 @@ for phones
 
     .API {
         background-color: #009C35;
-        height: 60px;
-        line-height: 60px;
-        font-size: 150%;
+        height: 40px;
+        line-height: 45px;
+        font-size: 120%;
         text-align: center;
         border-radius: 20px;
+        margin-bottom: 2%;
+        margin-right: 5%;
+        color: #FFFFFF;
     }
 
     .back_button {
@@ -193,6 +669,11 @@ for phones
         position: absolute;
         left: 80%;
         text-decoration: none;
+        margin-top: 5%;
+    }
+    
+    a:link { 
+        text-decoration: none; 
     }
     
     .movies {
@@ -275,8 +756,8 @@ for phones
     }
 
     .nunu{
-         margin-right: 40%;
-         margin-left: 30%;
+         margin-right: 78%;
+         margin-left: 22%;
          width: 50%;
          padding: 10px;
     }
@@ -303,7 +784,10 @@ for phones
         display: flex;
         margin-left: auto;
         margin-right: auto;
-        height: 300px;
+        max-height: 200px;
+        max-width: 100px;
+        height: auto;
+        width: auto;
         
     }
 
@@ -326,11 +810,14 @@ for phones
 
     .API {
         background-color: #009C35;
-        height: 60px;
-        line-height: 60px;
-        font-size: 150%;
+        height: 40px;
+        line-height: 45px;
+        font-size: 120%;
         text-align: center;
         border-radius: 20px;
+        margin-bottom: 2%;
+        margin-right: 5%;
+        color: #FFFFFF;
     }
 
     .back_button {
@@ -341,6 +828,11 @@ for phones
         position: absolute;
         left: 80%;
         text-decoration: none;
+        margin-top: 5%;
+    }
+    
+    a:link { 
+        text-decoration: none; 
     }
     
     .movies {
@@ -500,6 +992,7 @@ for phones
         position: absolute;
         left: 80%;
         text-decoration: none;
+        margin-top: 5%;
     }
     
     .movies {
@@ -526,6 +1019,175 @@ for phones
     .s3 {
         margin-right: 5%;
         margin-left: auto;
+    }
+}
+
+@media (min-width: 1000px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #2B3846
+    }
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 400px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{ 
+         margin-right: 70%;
+         margin-left: 30%;
+         width: 50%;
+         padding: 10px;
+    }
+    
+    p {
+        color: #FFFFFF;
+    }
+    
+    h1 {
+        color: #FFFFFF;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 400px;
+        
+    }
+
+    .col {
+        flex: auto;
+    }
+
+    .movie_poster_and_description {
+        margin-left: 10%;
+        width: 600px;
+    }
+
+    .movieposter_specific {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 300px;
+        max-width: 200px;
+        height: auto;
+        width: auto;
+        
+    }
+
+    .moviedescription_specific {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+    }
+    
+    .streaming_services {
+        margin-left: 5%;
+        width: 400px;
+    }
+
+    .streaming_title {
+        text-align: center;
+        margin-left: auto;
+    }
+
+    .API {
+        background-color: #009C35;
+        height: 40px;
+        line-height: 45px;
+        font-size: 120%;
+        text-align: center;
+        border-radius: 20px;
+        margin-bottom: 2%;
+        margin-right: 5%;
+        color: #FFFFFF;
+        margin-left: auto
+    }
+
+    .back_button {
+        color: #FFFFFF;
+        background-color: #2768B5;
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        left: 80%;
+        margin-bottom: 50%;
+    }
+    
+    a:link { 
+        text-decoration: none; 
+    }
+    
+    .movies {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 550px;
+    }
+    
+    .s1 {
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+    
+    .s2 {
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-top: 0.5%
+    }
+    
+    .s3 {
+        margin-right: 15%;
+        margin-left: 15%;
     }
 }
 
@@ -583,8 +1245,8 @@ for phones
     }
 
     .nunu{
-         margin-right: 40%;
-         margin-left: 30%;
+         margin-right: 65%;
+         margin-left: 35%;
          width: 50%;
          padding: 10px;
     }
@@ -621,7 +1283,10 @@ for phones
         display: flex;
         margin-left: auto;
         margin-right: auto;
-        height: 300px;
+        max-height: 300px;
+        max-width: 200px;
+        height: auto;
+        width: auto;
         
     }
 
@@ -639,15 +1304,22 @@ for phones
 
     .streaming_title {
         text-align: center;
+        margin-top: 5%;
+        font-size: 250%;
+        margin-left: auto;
     }
 
     .API {
         background-color: #009C35;
-        height: 60px;
+        height: 50px;
+        width: 400px;
         line-height: 60px;
         font-size: 150%;
         text-align: center;
         border-radius: 20px;
+        margin-bottom: 2%;
+        color: #FFFFFF;
+        margin-left: auto;
     }
 
     .back_button {
@@ -658,6 +1330,13 @@ for phones
         position: absolute;
         left: 80%;
         text-decoration: none;
+        float: left;
+        margin-bottom: 20%;
+        
+    }
+    
+    a:link { 
+        text-decoration: none; 
     }
     
     .movies {

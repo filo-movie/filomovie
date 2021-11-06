@@ -17,21 +17,42 @@
             if (movieObjList.moviesFound.length == 0){
                 $("document").ready(function(){
                     $(".error").html("Movie not found (search is case sensitive and must type out the movie title exactly)")
-
+                });   
+            }
+            else if (movieObjList.moviesFound.length >= 20){
+                $("document").ready(function(){
+                    $(".error").html("<p align='center'> <strong> Too many results. Please be more specific. </strong> </p>")
                 });   
             }
             else{
                 // #52 iterate through the movie list and display posters
                 // FIXME: afee needs to verify if all posters will show up or not
-                jQuery.each(movieObjList.moviesFound, function(i, val) {
-
-                    $("document").ready(function(){
-
+                jQuery.each(movieObjList.moviesFound, function(i, val)
+                {
+                    $("document").ready(function()
+                    {
                         //insert new movie box for movie
                         $(".movies").append("<div class='s1'></div>");
 
                         //insert new <a> for movie
-                        $(".s1").append("<a id='" + movieObjList.moviesFound[i].movie_id + "' href='{{url_for('movie_details')}}'></a>");
+                        $(".s1").append("<a id='" + movieObjList.moviesFound[i].movie_id + "'</a>"); 
+                            // + "' href='{{url_for('movie_details')}}'></a>");
+                        
+                        // appending click event to eat movie cover
+                        var movieData = movieObjList.moviesFound[i];
+                        $("#"+ movieObjList.moviesFound[i].movie_id).click(function() {
+                            $.ajax({
+                                type : 'POST',
+                                url : "{{url_for('json_handler')}}",
+                                contentType: 'application/json',
+                                data : JSON.stringify(movieData),
+                                success: function(data, textStatus, jqXHR){
+                                    console.log(jqXHR.status);
+                                    window.location.href= "{{url_for('movie_details')}}";
+                                }
+                            });
+                        
+                        });
 
                         //append image to the <a id...>
                         $("#" + movieObjList.moviesFound[i].movie_id).append("<img id='" + movieObjList.moviesFound[i].movie_title + "' class='movieposter_multiple' src='" + movieObjList.moviesFound[i].movie_image + "' alt='A movie poster of " + movieObjList.moviesFound[i].movie_title + "'/>");
@@ -43,28 +64,7 @@
                     });
 
                 });
-                
-                // for (var i = 0; i < movieObjList.moviesFound.length; ++i) {
 
-                //     var curMovieObj = movieObjList.moviesFound[i];
-
-                //     $("document").ready(function(){
-
-                //         //insert new movie box for movie
-                //         $(".movies").append("<div class='s1'></div>");
-
-                //         //insert new <a> for movie
-                //         $(".s1").append("<a id='" + curMovieObj.movie_id + "' href='{{url_for('movie_details')}}'></a>");
-
-                //         //append image to the <a id...>
-                //         $("#" + curMovieObj.movie_id).append("<img id='" + curMovieObj.movie_title + "' class='movieposter_multiple' src='" + curMovieObj.movie_image + "' alt='A movie poster of " + curMovieObj.movie_title + "'/>");
-
-                //         //append title to the <a id...>
-                //         $("#" + curMovieObj.movie_id).append("<p id='t" +curMovieObj.movie_title + "' class='movietitle'>" + curMovieObj.movie_title + "</p>");
-                        
-
-                //     });
-                // }
             $(".movies").append("<span class='stretch'></span>");
             }
 
@@ -76,18 +76,15 @@
     <body>
         
 
-        
-
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Free Candy</a>
-
 
         <!--NOTE: #35 this action will bring the input to the backend when the GO button is clicked-->
         <div class = "nunu">
           <form action="{{url_for('search')}}" method="post">
             <!--id="" will be useful for backend and css-->
             <!--only inputs with name="" will be submitted-->
-            <input required name="movie_title" id="movie_title" type="text" placeholder="search movie" minlength="1">
-            <button type="submit" class = "go">GO</button>
+            <input required name="movie_title" id="movie_title" type="text" placeholder=" Search movie" minlength="1">
+            
           </form>
         </div>
         
@@ -105,6 +102,18 @@
                 </a>
             </div>
             -->
+
+            <!-- <div class = "s1">
+                <form action="{{url_for('movie_details')}}" method="post">
+                    <input type="hidden" name="movie_id" value="helsadk">
+                    <button type="submit">
+                        <a id="14" href="{{url_for('movie_details')}}">
+                            <img class="movieposter_multiple" src="" alt="A movie poster of Shrek 1"/>
+                            <p class="movietitle">Shrek</p>
+                        </a>
+                    </button>
+                </form>
+            </div> -->
             
 
             <!--I put this line after the for loop in the script-->
