@@ -13,20 +13,20 @@ def delete_movie(id):
     return base_functions.delete_movie(db, relation_dictionary["Movie"], id)
 
 # NOTE: test filling up dummy data for search
-def filling_up_database():
-    print('\033[92m' + "[*] Creating dummy data \"Shrek\" in Movie database... " + '\033[0m' + "\n", flush=True)
-    insert_movie(-1, "Some image", "Shrek", "A movie about an ogre and a donkey.", "Available on some streaming services")
-    db.session.commit()
+# def filling_up_database():
+#     print('\033[92m' + "[*] Creating dummy data \"Shrek\" in Movie database... " + '\033[0m' + "\n", flush=True)
+#     insert_movie(-1, "Some image", "Shrek", "A movie about an ogre and a donkey.", "Available on some streaming services")
+#     db.session.commit()
 
 
 # NOTE: delete dummy data from database
-def deleting_dummy_data():
-    print('\033[92m' + "[*] Deleting dummy data \"Shrek\" in Movie database... " + '\033[0m' + "\n", flush=True)
-    Shrek = search_title("Shrek") #[0]
-    if len(Shrek) != 0:
-        foundShrek = Shrek[0]
-        db.session.delete(foundShrek)
-    db.session.commit()
+# def deleting_dummy_data():
+#     print('\033[92m' + "[*] Deleting dummy data \"Shrek\" in Movie database... " + '\033[0m' + "\n", flush=True)
+#     Shrek = search_title("Shrek") #[0]
+#     if len(Shrek) != 0:
+#         foundShrek = Shrek[0]
+#         db.session.delete(foundShrek)
+#     db.session.commit()
 
 
 # SAMPLE INSERT AND DELETE. Test filling up database

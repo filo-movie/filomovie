@@ -10,14 +10,10 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+
     <script>
-        // is is the JSON data
-        var clicked_movie = '{"movie_id": "2", "movie_title": "Forrest Gump", "movie_image": "https://image.tmdb.org/t/p/original/saHP97rTPS5eLmrLQEcANmKrsFl.jpg", "movie_desc": "A man with a low IQ has accomplished great things in his life and been present during significant historic events-in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.", "stream_providers": ["fubotV", "Showtime Amazon Channel", "Showtime Roku Premium Channel", "Showtime", "DIRECTV", "Spectrum On Demand"]}';
+        var obj = JSON.parse('{{ movieDetails | tojson | safe}}');
 
-        //parse the JSON data
-        var obj = JSON.parse(clicked_movie);
-
-        
         //modify html using the parsed JSON data
         $("document").ready(function(){
             
@@ -27,11 +23,20 @@
 
             //insert movie description
             $("#desc").html(obj.movie_desc);
+
+            console.log(obj.streaming_services);
+
+            var providersList = obj.streaming_services;
             
             //insert streaming services
-            $.each(obj.stream_providers, function(index, value) {
-                $(".streaming_services").append("<div class='API'>" + value + "</div>");
-            });
+            if (providersList.length == 0){
+                $(".streaming_services").append("<div class='API'>" + "No Provider Available! " + "</div>");
+            }
+            else{
+                $.each(providersList, function(index, value) {
+                    $(".streaming_services").append("<div class='API'>" + value + "</div>");
+                });
+            }
 
         });
     </script>
