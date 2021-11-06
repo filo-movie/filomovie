@@ -16,11 +16,11 @@
             // Movie Not Found
             if (movieObjList.moviesFound.length == 0){
                 $("document").ready(function(){
-                    $(".error").html("Movie not found (search is case sensitive and must type out the movie title exactly)")
+                    $(".error").html("<p align='center'> <strong> Movie not found. Please try again. </strong> </p>")
                 });   
             }
             // Too many results
-            else if (movieObjList.moviesFound.length >= 20){
+            else if (movieObjList.moviesFound.length >= 100){
                 $("document").ready(function(){
                     $(".error").html("<p align='center'> <strong> Too many results. Please be more specific. </strong> </p>")
                 });   
