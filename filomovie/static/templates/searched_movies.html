@@ -13,20 +13,20 @@
             // Parse movie result json object
             var movieObjList = JSON.parse('{{ search_result | tojson | safe}}');
             
-            // FIXME: Movie Not Found
+            // Movie Not Found
             if (movieObjList.moviesFound.length == 0){
                 $("document").ready(function(){
-                    $(".error").html("Movie not found (search is case sensitive and must type out the movie title exactly)")
+                    $(".error").html("<p align='center'> <strong> Movie not found. Please try again. </strong> </p>")
                 });   
             }
-            else if (movieObjList.moviesFound.length >= 20){
+            // Too many results
+            else if (movieObjList.moviesFound.length >= 100){
                 $("document").ready(function(){
                     $(".error").html("<p align='center'> <strong> Too many results. Please be more specific. </strong> </p>")
                 });   
             }
             else{
                 // #52 iterate through the movie list and display posters
-                // FIXME: afee needs to verify if all posters will show up or not
                 jQuery.each(movieObjList.moviesFound, function(i, val)
                 {
                     $("document").ready(function()
@@ -36,7 +36,6 @@
 
                         //insert new <a> for movie
                         $(".s1").append("<a id='" + movieObjList.moviesFound[i].movie_id + "'</a>"); 
-                            // + "' href='{{url_for('movie_details')}}'></a>");
                         
                         // appending click event to eat movie cover
                         var movieData = movieObjList.moviesFound[i];

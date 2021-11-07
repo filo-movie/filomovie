@@ -36,6 +36,7 @@ def process_search(searchedMovie):
     return movieJsonObj
 
 
+# sanitize movie details json data
 def process_detail(postedJson):
     tempDict = {}
     tempDict['movie_id'] = postedJson['movie_id']
@@ -45,9 +46,6 @@ def process_detail(postedJson):
     
     tempDict['streaming_services'] = []
     for service in json.loads(postedJson['streaming_services']):
-        #print("provider: " + ser, flush=True)
         tempDict['streaming_services'].append(service)
 
-    # print("temp json: " + str(tempDict), flush=True)
-    # print("provider json: " + str(tempDict['streaming_services']), flush=True)
     return tempDict
