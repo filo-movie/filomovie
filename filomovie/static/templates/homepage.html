@@ -9,11 +9,10 @@
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="stylesheet.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/homepage-style.css')}}">    
   </head>
   <body>
-   <div class="container" style="margin-top: 8%;">
+   <div class="HMcontainer" style="margin-top: 8%;">
        <div class="col-md-6 col-md-offset-3">     
         <div class="row">
               <div id="logo" class="text-center">
@@ -21,17 +20,12 @@
               <h1>FiloMovie</h1>
        
               </div>
-           <form role="form" id="form-buscar">
-             <div class="form-group">
-               <div class="input-group">
-                 <input id="1" class="form-control" type="text" name="search" placeholder="Search..." required/>
-                 <span class="input-group-btn">
-                   <button type="button" class="btn btn-primary">search</button>
-                   <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
-                 </span>
-               </div>
-             </div>
-          </form>
+           <form action="{{url_for('search')}}" method="post">
+            <!--id="" will be useful for backend and css-->
+            <!--only inputs with name="" will be submitted-->
+            <input required name="movie_title" id="movie_title" type="text" placeholder="  Search movie...">
+            <button type="submit" class = "go">GO</button>
+           </form>
          </div>            
        </div>
        <p>Find where to stream your favorite movie!</p>

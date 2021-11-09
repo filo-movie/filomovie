@@ -10,17 +10,25 @@
         <link rel="icon" href="{{url_for('static', filename='images/movie-symbol-of-video-camera_icon-icons.com_72981.png')}}">
         <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     </head>
-
     <body>
-        <h1>FiloMovies</h1>
+       <div class="HMcontainer" style="margin-top: 8%;">
+       <div class="col-md-6 col-md-offset-3">     
+        <div class="row">
+              <div id="logo" class="text-center">
 
-        <!--this action="" will bring the input to the backend when the GO button is clicked-->
-        <form action="indextest.html">
-            <input required name="movie_title" id="movie" type="text" placeholder="search movie" minlength="1">
-            <button type="submit">GO</button>
-        </form>
-
-        <p>Find where you can stream your favorite movies!</p>
+              <h1>FiloMovie</h1>
+       
+              </div>
+           <form action="{{url_for('search')}}" method="post">
+            <!--id="" will be useful for backend and css-->
+            <!--only inputs with name="" will be submitted-->
+            <input required name="movie_title" id="movie_title" type="text" placeholder="  Search movie...">
+            <button type="submit" class = "go">GO</button>
+           </form>
+         </div>            
+       </div>
+       <p>Find where to stream your favorite movie!</p>
+    </div>
         
     </body>
 

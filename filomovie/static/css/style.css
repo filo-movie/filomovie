@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap');
+
 body {
     margin: 0;
     padding: 0;
-    background: #2B3846
+    background: #2B3846;
+    font-family: 'Prompt', sans-serif;
 }
 
 h1 {
@@ -10,32 +13,13 @@ h1 {
 
 
 /*the background-color will need to be a variable from the back-end*/
-h1.API {
-    background-color: #43ac06;
-    border-radius: 10px;
-}
+
 
 a {
     color: #FFFFFF;
 }
 
 p {
-    color: #FFFFFF;
-}
-
-img.movieposter_multiple {
-    width: 100px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-img.movieposter_specific {
-    width: 200px;
-    border-radius: 10px;
-}
-
-p.movietitle {
-    font-weight: bold;
     color: #FFFFFF;
 }
 
@@ -50,10 +34,17 @@ p.movietitle {
     text-justify: distribute-all-lines;
 }
 
-
-    
-    
-}
+.go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
 
 .stretch {
     width: 50%;
@@ -76,12 +67,66 @@ p.movietitle {
 /*col-sm-
 for phones
 */
-@media (min-width: 360px) {
+@media (min-width: 200px) {
     body {
         margin: 0;
         padding: 0;
         background: #2B3846
     }
+    
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 40px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 200px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 85%;
+         margin-left: 15%;
+         width: 50%;
+         padding: 10px;
+    }
+    
     p {
         color: #FFFFFF;
     }
@@ -93,66 +138,296 @@ for phones
         flex: auto;
     }
 
-    .movie_poster_and_description {
-        margin-top: 5%;
-        margin-left: auto;
-        margin-right: auto;
-        width: 600px;
-    }
-
-    .movieposter_specific {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        height: 300px;
-        
-    }
-
-    .moviedescription_specific {
-        display: flex;
-        margin-left: 5%;
-        margin-right: auto;
-        height: 150px;
-    }
-    
-    .streaming_services {
-        margin-left: auto;
-        margin-right: auto;
-        width: 400px;
-    }
-
     .streaming_title {
         text-align: center;
     }
 
-    .API {
-        background-color: #009C35;
-        height: 60px;
-        line-height: 60px;
-        font-size: 150%;
-        text-align: center;
-        border-radius: 20px;
-    }
 
-    .back_button {
-        color: #FFFFFF;
-        background-color: #2768B5;
-        padding: 10px;
-        border-radius: 10px;
-        position: absolute;
-        left: 80%;
-        text-decoration: none;
-    }
     
-    .movies {
-        margin-top: 5%;
-    }
-    
-    .s1 {
+    .s2 {
         margin-right: 50%;
         margin-left: 50%;
         width: 100px;
     }
+    
+    .s3 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+}
+
+
+@media (min-width: 360px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #2B3846
+    }
+    
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 300px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 95%;
+         margin-left: 5%;
+         width: 50%;
+         padding: 10px;
+    }
+    
+    p {
+        color: #FFFFFF;
+    }
+    h1 {
+        color: #FFFFFF;
+    }
+    
+    .col {
+        flex: auto;
+    }
+    
+    .streaming_title {
+        text-align: center;
+    }
+
+
+    .s2 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+    .s3 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+}
+
+@media (min-width: 400px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #2B3846
+    }
+    
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 300px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 90%;
+         margin-left: 10%;
+         width: 50%;
+         padding: 10px;
+    }
+    
+    p {
+        color: #FFFFFF;
+    }
+    h1 {
+        color: #FFFFFF;
+    }
+    
+    .col {
+        flex: auto;
+    }
+   
+    .streaming_title {
+        text-align: center;
+        font-size: 160%;
+    }
+
+    
+    a:link { 
+        text-decoration: none; 
+    }
+    
+    
+    .s2 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+    .s3 {
+        margin-right: 50%;
+        margin-left: 50%;
+        width: 100px;
+    }
+    
+}
+
+
+@media (min-width: 472px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #2B3846
+    }
+    
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 400px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 40%;
+         margin-left: 30%;
+         width: 50%;
+         padding: 10px;
+    }
+    
+    p {
+        color: #FFFFFF;
+    }
+    h1 {
+        color: #FFFFFF;
+    }
+    
+    .col {
+        flex: auto;
+    }
+
+   
+    .streaming_title {
+        text-align: center;
+    }
+
+
+    
+    a:link { 
+        text-decoration: none; 
+    }
+    
     
     .s2 {
         margin-right: 50%;
@@ -176,6 +451,60 @@ for phones
         padding: 0;
         background: #2B3846
     }
+    
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 400px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 78%;
+         margin-left: 22%;
+         width: 50%;
+         padding: 10px;
+    }
+    
     p {
         color: #FFFFFF;
     }
@@ -187,71 +516,16 @@ for phones
         flex: auto;
     }
 
-    .movie_poster_and_description {
-        margin-top: 5%;
-        margin-left: auto;
-        margin-right: auto;
-        width: 600px;
-    }
-
-    .movieposter_specific {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        height: 300px;
-        
-    }
-
-    .moviedescription_specific {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        height: 150px;
-    }
-    
-    .streaming_services {
-        margin-left: auto;
-        margin-right: auto;
-        width: 400px;
-    }
 
     .streaming_title {
         text-align: center;
     }
 
-    .API {
-        background-color: #009C35;
-        height: 60px;
-        line-height: 60px;
-        font-size: 150%;
-        text-align: center;
-        border-radius: 20px;
+    
+    a:link { 
+        text-decoration: none; 
     }
 
-    .back_button {
-        color: #FFFFFF;
-        background-color: #2768B5;
-        padding: 10px;
-        border-radius: 10px;
-        position: absolute;
-        left: 80%;
-        text-decoration: none;
-    }
-    
-    .movies {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        margin-top: 5%;
-        margin-left: auto;
-        margin-right: auto;
-        height: 550px;
-    }
-    
-    .s1 {
-        margin-right: auto;
-        margin-left: 25%;
-    }
     
     .s2 {
         margin-right: 10%;
@@ -272,6 +546,59 @@ for phones
         padding: 0;
         background: #2B3846
     }
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 400px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 40%;
+         margin-left: 30%;
+         width: 50%;
+         padding: 10px;
+    }
+    
     p {
         color: #FFFFFF;
     }
@@ -294,70 +621,12 @@ for phones
         flex: auto;
     }
 
-    .movie_poster_and_description {
-        margin-left: 10%;
-        margin-right: auto;
-        width: 600px;
-    }
-
-    .movieposter_specific {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        height: 300px;
-        
-    }
-
-    .moviedescription_specific {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        height: 300px;
-    }
-    
-    .streaming_services {
-        margin-left: auto;
-        margin-right: auto;
-        width: 400px;
-    }
 
     .streaming_title {
         text-align: center;
     }
 
-    .API {
-        background-color: #009C35;
-        height: 60px;
-        line-height: 60px;
-        font-size: 150%;
-        text-align: center;
-        border-radius: 20px;
-    }
 
-    .back_button {
-        color: #FFFFFF;
-        background-color: #2768B5;
-        padding: 10px;
-        border-radius: 10px;
-        position: absolute;
-        left: 80%;
-        text-decoration: none;
-    }
-    
-    .movies {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        margin-top: 5%;
-        margin-left: auto;
-        margin-right: auto;
-        height: 550px;
-    }
-    
-    .s1 {
-        margin-right: auto;
-        margin-left: 25%;
-    }
     
     .s2 {
         margin-right: 10%;
@@ -371,6 +640,112 @@ for phones
     }
 }
 
+@media (min-width: 1000px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #2B3846
+    }
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title {
+        width: 400px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{ 
+         margin-right: 70%;
+         margin-left: 30%;
+         width: 50%;
+         padding: 10px;
+    }
+    
+    p {
+        color: #FFFFFF;
+    }
+    
+    h1 {
+        color: #FFFFFF;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 400px;
+        
+    }
+
+    .col {
+        flex: auto;
+    }
+
+
+    .streaming_title {
+        text-align: center;
+        margin-left: auto;
+    }
+
+    
+    a:link { 
+        text-decoration: none; 
+    }
+
+    
+    .s2 {
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-top: 0.5%
+    }
+    
+    .s3 {
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+}
+
 /*col-sm-xl*/
 @media (min-width: 1200px) {
     body {
@@ -378,9 +753,65 @@ for phones
         padding: 0;
         background: #2B3846
     }
+    .HMcontainer{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #logo {
+        color: #FFFFFF;
+        width:100%;
+    }
+
+    p{
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    #logo h1 {
+        font-size: 60px;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        letter-spacing: -1px;
+    }
+
+    #movie_title 
+     {
+        width: 400px; 
+        height: 20px; 
+        border: 1px solid #999999; 
+        padding: 5px;
+        border-radius: 15px;
+        padding-left: 10px;
+     }
+
+    .go {
+        background-color: #2768B5;
+        border: none;
+        color: white;
+        padding: 7px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .nunu{
+         margin-right: 65%;
+         margin-left: 35%;
+         width: 50%;
+         padding: 10px;
+    }
+    
     p {
         color: #FFFFFF;
     }
+    
     h1 {
         color: #FFFFFF;
     }
@@ -400,68 +831,19 @@ for phones
         flex: auto;
     }
 
-    .movie_poster_and_description {
-        margin-left: 10%;
-        width: 600px;
-    }
-
-    .movieposter_specific {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        height: 300px;
-        
-    }
-
-    .moviedescription_specific {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        height: 300px;
-    }
-    
-    .streaming_services {
-        margin-left: 5%;
-        width: 400px;
-    }
-
     .streaming_title {
         text-align: center;
-    }
-
-    .API {
-        background-color: #009C35;
-        height: 60px;
-        line-height: 60px;
-        font-size: 150%;
-        text-align: center;
-        border-radius: 20px;
-    }
-
-    .back_button {
-        color: #FFFFFF;
-        background-color: #2768B5;
-        padding: 10px;
-        border-radius: 10px;
-        position: absolute;
-        left: 80%;
-        text-decoration: none;
-    }
-    
-    .movies {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
         margin-top: 5%;
+        font-size: 250%;
         margin-left: auto;
-        margin-right: auto;
-        height: 550px;
+    }
+
+
+    
+    a:link { 
+        text-decoration: none; 
     }
     
-    .s1 {
-        margin-right: 15%;
-        margin-left: 15%;
-    }
     
     .s2 {
         margin-right: 5%;
@@ -473,4 +855,130 @@ for phones
         margin-right: 15%;
         margin-left: 15%;
     }
+}
+
+input#movie_title:focus 
+ {
+    outline: none;
+ }
+
+
+button.go 
+ {
+   position: absolute;
+   margin-left: -50px;
+   border-radius: 0px 16px 16px 0px;
+ }
+
+p.subtitle 
+ {
+   border-right: solid 1px white;
+    padding-right: 10px;
+    border-left: solid 1px white;
+    padding-left: 10px;
+ }  
+
+.s1 
+ {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(140px,160px));
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    grid-row-gap: 35px;
+    grid-column-gap: 20px;    
+}
+
+.s1 a img 
+{
+   width: 100%;
+   border-radius: 5px;
+   box-shadow: 0px 20px 8px -11px black;
+   border: solid 1px black;   
+   transition: all .5s ease;
+}
+
+.s1 a img:hover 
+{
+    transform: translate(0px, -10px) scale(1.1);
+    box-shadow: 0px 40px 23px -18px black;
+}
+
+.s1 a:hover p 
+{
+    background: white;
+    color: #2b3846;
+    font-weight: bold;
+    transform: translate(0px, 15px);
+    border-radius: 5px;
+}
+
+.s1 a p 
+{
+    text-align: center;
+    transition: all .5s ease;
+}
+
+.movieposter_specific 
+{
+    box-shadow: 0px 20px 8px -11px black;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.moviedescription_specific 
+{
+   text-align: left;
+    margin: 20px;
+    border-bottom: solid 1px white;
+    padding-bottom: 10px;
+    border-top: solid 1px white;
+    padding-top: 10px;
+}
+
+.movie-container 
+{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-top: 50px;
+    padding: 20px;
+    padding: 20px;
+}
+
+.API 
+ {
+    background-color: #009C35;
+    line-height: 45px;
+    font-size: 1.4rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    color: #FFFFFF;
+    box-shadow: inset 0px 2px 3px 3px black;
+ }
+
+
+.back_button
+ {
+    background: blue;
+    padding: 2px 10px 2px 10px;
+    border-radius: 10px;
+    font-size: .9rem;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+ }
+
+
+@media(max-width:720px)
+{
+    .movie-container 
+     {
+      grid-template-columns: 100%;
+     }
 }

@@ -1,6 +1,6 @@
 body {background-color: #2B3846;}
 
-.container{
+.HMcontainer{
 display: flex;
 flex-direction:column;
 align-items: center;
@@ -23,5 +23,25 @@ p{color: #FFFFFF;
     font-family: Roboto, sans-serif;
     font-weight: 700;
     letter-spacing: -1px;
+}
+
+#movie_title {
+    width: 400px; 
+    height: 20px; 
+    border: 1px solid #999999; 
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.go {
+    background-color: #2768B5;
+    border: none;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
 }
 

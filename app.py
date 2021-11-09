@@ -1,51 +1,66 @@
-# TODO: app initialization code?
-import sys
-
-from flask import (
-    Flask, Blueprint, flash, redirect, render_template, request, url_for
-)
-
-from filomovie import backend
-
 import os
 
-from filomovie import app
+from flask import (
+    redirect, render_template, request, session, url_for
+)
+
+from filomovie import backend, app
+from filomovie.database.base_functions import search_title
+
 
 
 @app.route('/', methods=('GET', 'POST'))
 def index():
-    return render_template('indextest.html')
+    return render_template('index.html')
 
 
 @app.route('/home', methods=('GET', 'POST'))
 def home():
-    return render_template('indextest.html')
+    return render_template('index.html')
+
+
+@app.errorhandler(Exception)
+def all_exception_handler(error):
+    print("Error handler: " + str(error))
+    return redirect(url_for("home")) 
 
 
 '''
- NOTE:  page result will be dynamically generated in the future
-        the returned data will be send to backend via post request from the form
+NOTE: page result will be dynamically generated in the future
+      the returned data will be send to backend via post request from the form
 '''
 @app.route('/search', methods=('GET', 'POST'))
 def search():
     if request.method == "POST":
         searchedTitle = request.form.get("movie_title")
-        # NOTE: #35 POST to search
-        backend.process_search(searchedTitle)
-    return render_template('indextest.html')
+        global search_result
+        search_result = backend.process_search(searchedTitle)
+        # this is supposed to the dictionary object to front end
+        return render_template('searched_movies.html', search_result=search_result)
+    else:
+        return redirect(url_for("home")) 
+
+# json handler to handle json data after clicking on poster
+@app.route('/json_handler', methods=('GET', 'POST'))
+def json_handler():
+    if request.method == "POST":
+        movieDetails = request.get_json()
+        # storing session
+        session['movieDetails'] = movieDetails
+        # print("\tget request: " + str(movieDetails), flush=True)
+        movie_details()
+    return ('', 204)
 
 
-@app.route('/shrek1', methods=('GET', 'POST'))
-def shrek1():
-    return render_template('shrek_1.html')
+# display movie_details page with session data
+@app.route('/movie_details', methods=('GET', 'POST'))
+def movie_details():
+    curDetail = session['movieDetails']
+    movieDetails = backend.process_detail(curDetail)
 
-@app.route('/shrek2', methods=('GET', 'POST'))
-def shrek2():
-    return render_template('shrek_2.html')
-
-@app.route('/shrek3', methods=('GET', 'POST'))
-def shrek3():
-    return render_template('shrek_3.html')
+    # FIXME: clearing session data in case accessing the same url results in same webpage
+    # session.pop('movieDetails')
+    return render_template('movie_details.html', movieDetails=movieDetails)
 
 
 if __name__ == '__main__':
