@@ -29,9 +29,11 @@ def search():
     if request.method == "POST":
         searchedTitle = request.form.get("movie_title")
         search_result = backend.process_search(searchedTitle)
-
-    # this is supposed to the dictionary object to front end
-    return render_template('searched_movies.html', search_result=search_result)
+        if search_result != None:
+            # this is supposed to the dictionary object to front end
+            return render_template('searched_movies.html', search_result=search_result)
+        else:
+            home()
 
 
 # json handler to handle json data after clicking on poster
