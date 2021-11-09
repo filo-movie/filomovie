@@ -1,11 +1,11 @@
-import json
 import os
 
 from flask import (
-    Flask, Blueprint, flash, redirect, render_template, request, session, url_for
+    redirect, render_template, request, session, url_for
 )
 
 from filomovie import backend, app
+from filomovie.database.base_functions import search_title
 
 
 
@@ -19,32 +19,36 @@ def home():
     return render_template('index.html')
 
 
+@app.errorhandler(Exception)
+def all_exception_handler(error):
+    print("Error handler: " + str(error))
+    return redirect(url_for("home")) 
+
+
 '''
- NOTE:  page result will be dynamically generated in the future
-        the returned data will be send to backend via post request from the form
+NOTE: page result will be dynamically generated in the future
+      the returned data will be send to backend via post request from the form
 '''
 @app.route('/search', methods=('GET', 'POST'))
 def search():
-    # search_result = None
     if request.method == "POST":
         searchedTitle = request.form.get("movie_title")
+        global search_result
         search_result = backend.process_search(searchedTitle)
-        if search_result != None:
-            # this is supposed to the dictionary object to front end
-            return render_template('searched_movies.html', search_result=search_result)
-        else:
-            home()
-
+        # this is supposed to the dictionary object to front end
+        return render_template('searched_movies.html', search_result=search_result)
+    else:
+        return redirect(url_for("home")) 
 
 # json handler to handle json data after clicking on poster
 @app.route('/json_handler', methods=('GET', 'POST'))
 def json_handler():
     if request.method == "POST":
         movieDetails = request.get_json()
+        # storing session
         session['movieDetails'] = movieDetails
         # print("\tget request: " + str(movieDetails), flush=True)
         movie_details()
-        # return redirect(url_for("movie_details", movieDetails=movieDetails)) #, movieDetails=movieDetails))
     return ('', 204)
 
 
@@ -53,6 +57,9 @@ def json_handler():
 def movie_details():
     curDetail = session['movieDetails']
     movieDetails = backend.process_detail(curDetail)
+
+    # FIXME: clearing session data in case accessing the same url results in same webpage
+    # session.pop('movieDetails')
     return render_template('movie_details.html', movieDetails=movieDetails)
 
 
