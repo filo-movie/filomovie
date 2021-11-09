@@ -107,13 +107,13 @@ class TestQuery(unittest.TestCase):
 # Requires insert_movie to be working
 class TestDelete(unittest.TestCase):
     # Tests that delete function does not do anything if there is not a value to delete.
-    def delete_nonexistent(self):
+    def test_delete_nonexistent(self):
         drop_test_values()
         self.assertFalse(base_functions.delete_movie(db, relation_dictionary["Movie"], -1))
         drop_test_values()
 
     # Tests that the delete function deletes the record if it exists.
-    def delete_record(self):
+    def test_delete_record(self):
         drop_test_values()
         base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
                                     "A movie about an ogre and a donkey.",
