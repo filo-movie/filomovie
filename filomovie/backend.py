@@ -1,13 +1,10 @@
-from enum import EnumMeta
-from operator import countOf, pos
-import operator
-from os import pardir
+# from enum import EnumMeta
+# from operator import countOf, pos
+# import operator
+# from os import pardir
 
-from flask import (
-    Flask, Blueprint, flash, redirect, render_template, request, url_for
-)
-from werkzeug.datastructures import FileMultiDict
-from filomovie import app
+# from werkzeug.datastructures import FileMultiDict
+# from filomovie import app
 from filomovie.database import functions, base_functions
 import json
 
