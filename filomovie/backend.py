@@ -29,8 +29,7 @@ def process_search(searchedMovie):
         curObj['movie_desc'] = movie.description.replace('"', '\\"')
         curObj['streaming_services'] = movie.streaming_services.replace('"', '\\"')
         movieJsonObj['moviesFound'].append(curObj)
-
-    print("size of result: " + str(len(movieJsonObj['moviesFound'])), flush=True)
+    # print("size of result: " + str(len(movieJsonObj['moviesFound'])), flush=True)
 
     # this is supposed to return a python dictionary
     return movieJsonObj

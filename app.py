@@ -40,7 +40,7 @@ def json_handler():
     if request.method == "POST":
         movieDetails = request.get_json()
         session['movieDetails'] = movieDetails
-        print("\tget request: " + str(movieDetails), flush=True)
+        # print("\tget request: " + str(movieDetails), flush=True)
         movie_details()
         # return redirect(url_for("movie_details", movieDetails=movieDetails)) #, movieDetails=movieDetails))
     return ('', 204)
