@@ -3,7 +3,7 @@ from sqlalchemy import func
 # movie title, movie description, and movie streaming_services.
 # Adds the data to the database if it doesn't exist already and returns True.
 # If the record already exists, will print to the screen and return False.
-def insert_movie(db, Movie, id, image, title, description, streaming_services):
+def insert_movie(db, Movie, id, image, title, description, streaming_services, runtime, rating, release_date, genres):
     if Movie.query.filter_by(id=id).all():
         print("Movie '" + str(Movie.query.filter_by(id=id).all()[0].title) + "', id=" + str(id) + " already present in the database")
         return False
@@ -11,7 +11,7 @@ def insert_movie(db, Movie, id, image, title, description, streaming_services):
         print("One or more of the input values was of the incorrect type.")
         return False
     else:
-        db.session.add(Movie(id, image, title, description, streaming_services))
+        db.session.add(Movie(id, image, title, description, streaming_services, runtime, rating, release_date, genres))
         db.session.commit()
         print("The following movie was added: " + str(Movie.query.filter_by(id=id).all()[0].title) + ", id=" + str(id))
         return True
