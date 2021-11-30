@@ -32,7 +32,12 @@
             }
             else{
                 $.each(providersList, function(index, value) {
-                    $(".streaming_title").after("<div class='API'>" + value + "</div>");
+                    // var fullLink = "https://letmegooglethat.com/?q=" + value;
+                    var fullLink = "https://www.google.com/search?q=" + value;
+                    // $(".streaming_title").after("<div class='API'>" + value + "</div>");
+                    $(".streaming_title").after("<a href=" + fullLink + "><div class='API'>" + value + "</div></a>");
+                    
+                    
                 });
             } 
 
