@@ -12,7 +12,9 @@
     
 
     <script>
-        var obj = JSON.parse('{{ movieDetails | tojson | safe}}');
+        //var obj = JSON.parse('{{ movieDetails | tojson | safe}}');
+        //dummy data
+        var obj = {"runtime": "70", "rating": "8", "release_date": "2021-10-23", "genres": ["comedy", "action", "horror"], "movie_id": "2", "movie_title": "Forrest Gump", "movie_image": "https://image.tmdb.org/t/p/original/saHP97rTPS5eLmrLQEcANmKrsFl.jpg", "movie_desc": "A man with a low IQ has accomplished great things in his life and been present during significant historic events-in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.", "streaming_services": ["fubotV", "Showtime Amazon Channel", "Showtime Roku Premium Channel", "Showtime", "DIRECTV", "Spectrum On Demand"]}
 
         //modify html using the parsed JSON data
         $("document").ready(function(){
@@ -20,6 +22,30 @@
             //insert movie poster image
             $("#image").attr("src", obj.movie_image);
             $("#image").attr("alt", "A movie poster of " + obj.movied_title);
+
+            //insert runtime
+            $("#runtime").html(obj.runtime);
+
+            //insert rating
+            $("#rating").html(obj.rating);
+
+            //insert release date
+            $("#release_date").html(obj.release_date);
+
+            //insert genres
+            var genresList = obj.genres
+
+            //no genre abailable
+            if (genresList.length ==0){
+                $(".genres").html("no genre");
+            }
+            else  {
+                $.each(genresList, function(index, value) {
+                    $(".genres").after("<p>-" + value + "-</p>");
+    
+                });
+            }
+            $("#genres").html(obj.genres)
 
             //insert movie description
             $("#desc").html(obj.movie_desc);
@@ -51,6 +77,10 @@
     <div class="movie-container">
         <div class="movie_poster_and_description">
             <img id="image" class="movieposter_specific" src="" alt=""/>
+            <p id="runtime"></p>
+            <p id="rating"></p>
+            <p id="release_date"></p>
+            <p id="genres"></p>
             <p id="desc" class="moviedescription_specific"></p>
         </div>
         <div class="streaming_services">
