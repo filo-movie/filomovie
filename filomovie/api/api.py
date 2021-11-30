@@ -63,6 +63,7 @@ def api_parse():
                     else:
                         stream = []
                 info_dict['stream_providers'] = stream
+                delete_movie(info_dict['movie_id'])
                 insert_movie(info_dict['movie_id'], info_dict['movie_image'], info_dict['movie_title'],
                              info_dict['movie_desc'], json.dumps(info_dict['stream_providers']), info_dict['runtime'],
                              info_dict['rating'], info_dict['release_date'], json.dumps(info_dict['genres']))
