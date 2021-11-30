@@ -45,6 +45,13 @@ def api_parse():
                 if info['poster_path'] != None:
                     info_dict['movie_image'] = posterpath + info['poster_path']
                 info_dict['movie_desc'] = info['overview']
+                info_dict['runtime'] = info['runtime']
+                info_dict['rating'] = info['vote_average']
+                info_dict['release_date'] = info['release_date']
+                genres = []
+                for i in info['genres']:
+                    genres.append(i['name'])
+                info_dict['genres'] = genres
                 url = baseurl + str(movie_id) + '/watch/providers?api_key=' + apikey
                 output = urlopen(url)
                 info = json.loads(output.read())
@@ -57,7 +64,8 @@ def api_parse():
                         stream = []
                 info_dict['stream_providers'] = stream
                 insert_movie(info_dict['movie_id'], info_dict['movie_image'], info_dict['movie_title'],
-                             info_dict['movie_desc'], json.dumps(info_dict['stream_providers']))
+                             info_dict['movie_desc'], json.dumps(info_dict['stream_providers']), info_dict['runtime'],
+                             info_dict['rating'], info_dict['release_date'], json.dumps(info_dict['genres']))
 
 filter_movies()
 api_parse()
