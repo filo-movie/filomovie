@@ -133,6 +133,11 @@ class TestDelete(unittest.TestCase):
         self.assertFalse(relation_dictionary["Movie"].query.filter_by(id=-1).all())
         drop_test_values()
 
+class TestGetRandomMovie(unittest.TestCase):
+    # Tests that the random function returns a list with one object in it.
+    def test_get_random_movie_returns_one(self):
+        random_movie = base_functions.get_random_movie(relation_dictionary["Movie"])
+        self.assertEqual(len(random_movie), 1)
 
 if __name__ == '__main__':
     unittest.main()

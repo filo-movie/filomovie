@@ -12,6 +12,9 @@ def search_title(title):
 def delete_movie(id):
     return base_functions.delete_movie(db, relation_dictionary["Movie"], id)
 
+def get_random_move():
+    return base_functions.get_random_movie(relation_dictionary["Movie"])
+
 # NOTE: test filling up dummy data for search
 # def filling_up_database():
 #     print('\033[92m' + "[*] Creating dummy data \"Shrek\" in Movie database... " + '\033[0m' + "\n", flush=True)

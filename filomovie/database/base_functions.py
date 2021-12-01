@@ -40,3 +40,6 @@ def delete_movie(db, Movie, id):
         db.session.commit()
     return True
 
+def get_random_movie(Movie):
+    return [Movie.query.order_by(func.random()).first()]
+
