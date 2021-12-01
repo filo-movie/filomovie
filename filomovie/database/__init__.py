@@ -31,12 +31,20 @@ def create_database(app):
         title = db.Column(db.VARCHAR)
         description = db.Column(db.TEXT)
         streaming_services = db.Column(db.TEXT)
+        runtime = db.Column(db.INTEGER)
+        rating = db.Column(db.DECIMAL)
+        release_date = db.Column(db.VARCHAR)
+        genres = db.Column(db.TEXT)
 
-        def __init__(self, id, image, title, description, streaming_servies):
+        def __init__(self, id, image, title, description, streaming_servies, runtime, rating, release_date, genres):
             self.id = id
             self.image = image
             self.title = title
             self.description = description
             self.streaming_services = streaming_servies
+            self.runtime = runtime
+            self.rating = rating
+            self.release_date = release_date
+            self.genres = genres
 
     return db, {"Integer": Integer, "Movie": Movie}

@@ -39,13 +39,18 @@ class TestInsert(unittest.TestCase):
         drop_test_values()
         self.assertTrue(base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image",
                                                     "theNameOfNoOtherMovie", "Some Description",
-                                                    "Available on some streaming services"))
+                                                    "Available on some streaming services", 100, 9.97, "release",
+                                                    "Rom-com"))
         insertedValue = relation_dictionary["Movie"].query.filter_by(id=-1).all()
         self.assertEqual(insertedValue[0].id, -1)
         self.assertEqual(insertedValue[0].image, "Some image")
         self.assertEqual(insertedValue[0].title, "theNameOfNoOtherMovie")
         self.assertEqual(insertedValue[0].description, "Some Description")
         self.assertEqual(insertedValue[0].streaming_services, "Available on some streaming services")
+        self.assertEqual(insertedValue[0].runtime, 100)
+        self.assertEqual(float(insertedValue[0].rating), 9.97)
+        self.assertEqual(insertedValue[0].release_date, "release")
+        self.assertEqual(insertedValue[0].genres, "Rom-com")
         drop_test_values()
 
     # Test that the function returns False if a movie with the same id already exists. Then deletes the value.
@@ -53,15 +58,17 @@ class TestInsert(unittest.TestCase):
         drop_test_values()
         self.assertTrue(base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image",
                                                     "theNameOfNoOtherMovie", "Some Description",
-                                                    "Available on some streaming services"))
+                                                    "Available on some streaming services", 100, 9.97, "release",
+                                                    "Rom-com"))
         self.assertFalse(base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image",
                                                     "theNameOfNoOtherMovie", "Some Description",
-                                                    "Available on some streaming services"))
+                                                    "Available on some streaming services", 100, 9.97, "release",
+                                                    "Rom-com"))
         drop_test_values()
 
     # Test that the function returns False if one or more input values are of the incorrect type.
     def test_input_types(self):
-        self.assertFalse(base_functions.insert_movie(db, relation_dictionary["Movie"], -1, -1, -1, -1, -1))
+        self.assertFalse(base_functions.insert_movie(db, relation_dictionary["Movie"], -1, -1, -1, -1, -1, -1, -1, -1, -1))
 
 # Requires insert_movie to be working.
 class TestQuery(unittest.TestCase):
@@ -73,10 +80,10 @@ class TestQuery(unittest.TestCase):
         drop_test_values()
         base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image",
                                     "theNameOfNoOtherMovie", "Some Description",
-                                    "Available on some streaming services")
+                                    "Available on some streaming services", 100, 9.97, "release", "Rom-com")
         base_functions.insert_movie(db, relation_dictionary["Movie"], -2, "Some image2",
                                     "theNameOfNoOtherFilm2", "Some Description2",
-                                    "Available on some streaming services2")
+                                    "Available on some streaming services2", 100, 9.97, "release", "Rom-com")
         records = base_functions.search_title(relation_dictionary["Movie"], "theNameOfNoOther")
         self.assertEqual(records[0].id, -1)
         self.assertEqual(records[0].image, "Some image")
@@ -94,30 +101,34 @@ class TestQuery(unittest.TestCase):
         drop_test_values()
         base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image",
                                     "theNameOfNoOtherMovie", "Some Description",
-                                    "Available on some streaming services")
+                                    "Available on some streaming services", 100, 9.97, "release", "Rom-com")
         records = base_functions.search_title(relation_dictionary["Movie"], "thenAmeofNoOthErMovie")
         self.assertEqual(records[0].id, -1)
         self.assertEqual(records[0].image, "Some image")
         self.assertEqual(records[0].title, "theNameOfNoOtherMovie")
         self.assertEqual(records[0].description, "Some Description")
         self.assertEqual(records[0].streaming_services, "Available on some streaming services")
+        self.assertEqual(records[0].runtime, 100)
+        self.assertEqual(float(records[0].rating), 9.97)
+        self.assertEqual(records[0].release_date, "release")
+        self.assertEqual(records[0].genres, "Rom-com")
         drop_test_values()
 
 
 # Requires insert_movie to be working
 class TestDelete(unittest.TestCase):
     # Tests that delete function does not do anything if there is not a value to delete.
-    def delete_nonexistent(self):
+    def test_delete_nonexistent(self):
         drop_test_values()
         self.assertFalse(base_functions.delete_movie(db, relation_dictionary["Movie"], -1))
         drop_test_values()
 
     # Tests that the delete function deletes the record if it exists.
-    def delete_record(self):
+    def test_delete_record(self):
         drop_test_values()
         base_functions.insert_movie(db, relation_dictionary["Movie"], -1, "Some image", "Shrek",
                                     "A movie about an ogre and a donkey.",
-                                    "Available on some streaming services")
+                                    "Available on some streaming services", 100, 9.97, "release", "Rom-com")
         self.assertTrue(base_functions.delete_movie(db, relation_dictionary["Movie"], -1))
         self.assertFalse(relation_dictionary["Movie"].query.filter_by(id=-1).all())
         drop_test_values()
