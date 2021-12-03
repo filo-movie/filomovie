@@ -13,13 +13,40 @@
 
     <script>
         var obj = JSON.parse('{{ movieDetails | tojson | safe}}');
+        // dummy data
+        // var obj = {"movie_runtime": "70", "movie_rating": "8", "movie_release_date": "2021-10-23", "movie_genres": ["comedy", "action", "horror"], "movie_id": "2", "movie_title": "Forrest Gump", "movie_image": "https://image.tmdb.org/t/p/original/saHP97rTPS5eLmrLQEcANmKrsFl.jpg", "movie_desc": "A man with a low IQ has accomplished great things in his life and been present during significant historic events-in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.", "streaming_services": ["fubotV", "Showtime Amazon Channel", "Showtime Roku Premium Channel", "Showtime", "DIRECTV", "Spectrum On Demand"]}
 
         //modify html using the parsed JSON data
         $("document").ready(function(){
             
             //insert movie poster image
             $("#image").attr("src", obj.movie_image);
-            $("#image").attr("alt", "A movie poster of " + obj.movied_title);
+            $("#image").attr("alt", "A movie poster of " + obj.movie_title);
+
+            //insert runtime
+            $("#runtime").html("Runtime: " + obj.movie_runtime + " min");
+
+            //insert rating
+            $("#rating").html("Rating: " + obj.movie_rating);
+
+            //insert release date
+            $("#release_date").html("Release date: " + obj.movie_release_date);
+
+            //insert genres
+            var genresList = obj.movie_genres
+
+            //no genre available
+            if (genresList.length ==0){
+                $("#genres").html("No genre");
+            }
+            else  {
+                $("#genres").append("Genres: | ");
+                $.each(genresList, function(index, value) {
+                    $("#genres").append(value + " | ");
+    
+                });
+            }
+            $("#genres").html(obj.genres)
 
             //insert movie description
             $("#desc").html(obj.movie_desc);
@@ -32,7 +59,12 @@
             }
             else{
                 $.each(providersList, function(index, value) {
-                    $(".streaming_title").after("<div class='API'>" + value + "</div>");
+                    // var fullLink = "https://letmegooglethat.com/?q=" + value;
+                    var fullLink = "https://www.google.com/search?q=" + value;
+                    // $(".streaming_title").after("<div class='API'>" + value + "</div>");
+                    $(".streaming_title").after("<a href=" + fullLink + "><div class='API'>" + value + "</div></a>");
+                    
+                    
                 });
             } 
 
@@ -46,6 +78,10 @@
     <div class="movie-container">
         <div class="movie_poster_and_description">
             <img id="image" class="movieposter_specific" src="" alt=""/>
+            <p id="runtime"></p>
+            <p id="rating"></p>
+            <p id="release_date"></p>
+            <p id="genres"></p>
             <p id="desc" class="moviedescription_specific"></p>
         </div>
         <div class="streaming_services">
