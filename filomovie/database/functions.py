@@ -2,8 +2,8 @@ from filomovie import db, relation_dictionary
 from filomovie.database import base_functions
 
 # Inserts a Movie tuple into the database with the given variables. ID MUST BE UNIQUE PER MOVIE.
-def insert_movie(id, image, title, description, streaming_services):
-    return base_functions.insert_movie(db, relation_dictionary["Movie"], id, image, title, description, streaming_services)
+def insert_movie(id, image, title, description, streaming_services, runtime, rating, release_date, genres):
+    return base_functions.insert_movie(db, relation_dictionary["Movie"], id, image, title, description, streaming_services, runtime, rating, release_date, genres)
 
 # Returns a list of Movie objects that match the search.
 def search_title(title):

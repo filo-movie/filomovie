@@ -863,11 +863,14 @@ input#movie_title:focus
  }
 
 
-button.go 
+input.go 
  {
+    -webkit-appearance: none;
+    appearance: none;
    position: absolute;
    margin-left: -50px;
    border-radius: 0px 16px 16px 0px;
+   margin-top:0px;
  }
 
 p.subtitle 
