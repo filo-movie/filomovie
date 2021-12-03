@@ -19,10 +19,10 @@ def home():
     return render_template('index.html')
 
 
-@app.errorhandler(Exception)
-def all_exception_handler(error):
-    print("Error handler: " + str(error))
-    return redirect(url_for("home")) 
+# @app.errorhandler(Exception)
+# def all_exception_handler(error):
+#     print("Error handler: " + str(error))
+#     return redirect(url_for("home")) 
 
 
 '''

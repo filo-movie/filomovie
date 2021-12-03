@@ -26,11 +26,13 @@ def process_search(searchedMovie):
         curObj['movie_desc'] = movie.description.replace('"', '\\"')
         curObj['streaming_services'] = movie.streaming_services.replace('"', '\\"')
         curObj['movie_runtime'] = movie.runtime
-        curObj['movie_rating'] = movie.rating
+
+        # NOTE: parsing rating decimal to string to fix json decimal error
+        curObj['movie_rating'] = str(movie.rating)
         curObj['movie_release_date'] = movie.release_date
 
         # FIXME: fix after merging with dev
-        curObj['movie_genres'] = movie.genres
+        curObj['movie_genres'] = movie.genres.replace('"', '\\"')
 
         movieJsonObj['moviesFound'].append(curObj)
     # print("size of result: " + str(len(movieJsonObj['moviesFound'])), flush=True)
